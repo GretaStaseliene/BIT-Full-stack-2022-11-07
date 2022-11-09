@@ -1,0 +1,86 @@
+.tasks {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 5px;
+}
+
+.animals-div {
+    text-align: center;
+}
+
+.animals-div img {
+    width: 150px;
+    margin: 10px;
+}
+
+.landscapes-gallery img {
+    width: 33%;
+    text-align: center;
+}
+
+.nelyginis img {
+    float: left;
+    width: 250px;
+    margin: 10px;
+}
+
+.lyginis img {
+    float: right;
+    width: 250px;
+    margin: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 30px;
+}
+
+.pirmas {
+    color: red;
+}
+
+.antras {
+    color: blue;
+}
+
+.trečias {
+    color: purple;
+}
+
+.ketvirtas {
+    color: green;
+}
+
+.penktas {
+    color: yellowgreen;
+}
+
+.šeštas {
+    color: blueviolet;
+}
+
+.first-paragraph {
+    text-align: left;
+}
+
+.second-paragraph {
+    text-align: right;
+}
+
+.third-paragraph {
+    text-align: center;
+}
+
+.fourth-paragrapf {
+    text-align: justify;
+}
+
+.size {
+    font-size: 20px;
+}
