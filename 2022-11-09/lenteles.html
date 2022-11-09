@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022-11-09 lenteles</title>
+    <style>
+        .products-table, .students-table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .products-table th, td, .students-table th, td {
+            border: 1px solid black;
+        }
+
+        .products {
+            width: 100%;
+        }
+
+        .students {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pirkinių krepšelis</h1>
+    <table class="products-table products">
+        <thead>
+            <tr>
+                <th>Produktas</th>
+                <th>Kiekis</th>
+                <th>Kaina</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pienas</td>
+                <td>2vnt.</td>
+                <td>2,19eur</td>
+            </tr>
+            <tr>
+                <td>Kiaušiniai</td>
+                <td>10vnt.</td>
+                <td>1,69eur</td>
+            </tr>
+            <tr>
+                <td>Obuoliai</td>
+                <td>1kg</td>
+                <td>0,69eur</td>
+            </tr>
+            <tr>
+                <td>Varškė</td>
+                <td>1vnt.</td>
+                <td>1,19eur</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Mokiniai</h2>
+    <table class="students-table students">
+        <thead>
+            <tr>
+                <th>Vardas</th>
+                <th>Pavardė</th>
+                <th>Klasė</th>
+                <th>Pažymių vidurkis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">Jonas</td>
+                <!-- <td>Jonaitis</td> -->
+                <td>9kl.</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Onutė</td>
+                <td>Pakalnutė</td>
+                <td>12kl.</td>
+                <td rowspan="2">8</td>
+            </tr>
+            <tr>
+                <td>Petras</td>
+                <td>Petraitis</td>
+                <td>11kl.</td>
+                <!-- <td>9,5</td> -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
