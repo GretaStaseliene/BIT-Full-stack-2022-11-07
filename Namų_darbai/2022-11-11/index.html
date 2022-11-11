@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022 metų kalendorius</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            width: 1000px;
+        }
+
+        h1 {
+            color: rgba(56,88,130,255);
+            text-align: center;
+            font-size: 36px;
+            font-weight: bolder;
+        }
+
+        h4 {
+            font-weight: bolder;
+            margin-top: 0;
+        }
+
+        div {
+            display: inline-flex;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid rgba(211,213,224,255);
+            margin: 10px 25px 10px 0;
+            width: 300px;
+            height: 200px;
+        }
+
+        td {
+            font-weight: bold;
+            /* padding: 1px; */
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .month {
+            text-align: center;
+            background-color: rgba(46,85,154,255);
+            color: white;
+            font-size: 18px;
+            border-bottom: rgba(149,171,208,255);
+        }
+
+        .week {
+            text-align: center;
+            background-color: rgba(149,171,208,255);
+            color: white;
+            border-color: rgba(149,171,208,255);
+            border-bottom: rgba(211,213,224,255);
+        }
+
+        .none {
+            background-color: rgba(215,226,246,255);
+            color: rgba(215,226,246,255);
+        }
+
+        .non-bold {
+            font-weight: 400;
+        }
+
+        .non-work-day {
+            background-color: rgba(244,206,174,255);
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>2022 metų kalendorius</h1>
+    <div class="jan">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">sausis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="non-work-day">1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="feb">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">vasaris</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>15</td>
+                <td class="non-work-day">16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="mar">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">kovas</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td class="non-work-day">11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="apr">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">balandis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td class="non-work-day">17</td>
+            </tr>
+            <tr>
+                <td class="non-work-day">18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="may">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">gegužė</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="non-work-day">1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>31</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="jun">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">birželis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td class="non-work-day">24</td>
+                <td>25</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="jul">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">liepa</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td class="non-work-day">6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="aug">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">rugpjūtis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td class="non-work-day">15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="sep">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">rugsėjis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="oct">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">spalis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="nov">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">lapkritis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="non-work-day">1</td>
+                <td class="non-work-day">2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="dec">
+        <table border="1">
+            <tr>
+                <td colspan="7" class="month non-bold">gruodis</td>
+            </tr>
+            <tr class="week">
+                <td class="non-bold">P</td>
+                <td class="non-bold">A</td>
+                <td class="non-bold">T</td>
+                <td class="non-bold">K</td>
+                <td class="non-bold">Pe</td>
+                <td class="non-bold">Š</td>
+                <td class="non-bold">S</td>
+            </tr>
+            <tr>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td class="non-work-day">24</td>
+                <td class="non-work-day">25</td>
+            </tr>
+            <tr>
+                <td class="non-work-day">26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td class="none">1</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+    <h4>Tigro metai</h5>
+</body>
+</html>
