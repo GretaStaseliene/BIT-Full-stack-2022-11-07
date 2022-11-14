@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formos</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- action atributas nurodo, kur duomenys turi buti perduodami -->
+    <form action="">
+        <div>
+            <label for="">Vardas:</label>
+            <input type="text" placeholder="Įveskite savo vardą" required>
+        </div>
+        <div>
+            <label for="">El. paštas:</label>
+            <input type="email" placeholder="Įveskite savo el. pašto adresą" required>
+        </div>
+        <div>
+            <label for="">Tel nr:</label>
+            <input type="tel" placeholder="Įveskite savo tel. nr" required>
+        </div>
+        <div>
+            <label for="">Slaptažodis:</label>
+            <input type="password" placeholder="Įveskite slaptažodį" required>
+        </div>
+        <div>
+            <label for="">Gimimo data:</label>
+            <input type="date" placeholder="Įveskite gimimo datą" required>
+        </div>
+        <div>
+            <label for="color">Mėgstamiausia spalva:</label>
+            <input type="color" placeholder="Pasirinkite spalvą" id="color" required>
+        </div>
+        <div>
+            <label for="file">Failas:</label>
+            <input type="file" id="file" required>
+        </div>
+        <div>
+            <label for="">Jūsų amžius:</label>
+            <input type="number" min="18" max="99" required>
+        </div>
+        <div>
+            <!-- <label for="">
+                <input type="checkbox"> Sutinku su taisyklėmis
+            </label> -->
+            <label for="terms-and-conditions">Sutinku su taisyklėmis</label>
+            <input type="checkbox" name="" id="terms-and-conditions">
+        </div>
+        <div>
+            <label for="">
+                <input type="radio" name="product" id=""> Pirmas
+            </label>
+            <label for="">
+                <input type="radio" name="product" id=""> Antras
+            </label>
+            <label for="">
+                <input type="radio" name="product" id=""> Trečias
+            </label>
+        </div>
+        <div>
+            <select name="" id="">
+                <option value="1">Pirmas</option>
+                <option value="2">Antras</option>
+                <option value="3">Trečias</option>
+            </select>
+        </div>
+        <select name="" id="" multiple>
+            <option value="1">Pirmas</option>
+            <option value="2">Antras</option>
+            <option value="3">Trečias</option>
+        </select>
+    </div>
+    <div>
+        <label for="">Jūsų komentaras:</label> <br>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Įrašykite savo tekstą"></textarea>
+    </div>
+        <button type="submit">Patvirtinti</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
