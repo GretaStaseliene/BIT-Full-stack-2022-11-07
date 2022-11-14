@@ -1,0 +1,111 @@
+body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    /* margin: 15px auto; */
+}
+
+.delivery-place {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+.delivery-time {
+    font-size: 14px;
+    text-align: center;
+    color: rgb(82, 81, 81);
+}
+
+.delivery-price {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.courier {
+    width: 300px;
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid rgba(211,211,211,255);
+}
+
+.container {
+    background-color: rgba(245,245,245,255);
+    width: 965px;
+    border: 1px solid rgb(174, 171, 171);
+}
+
+.content {
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.grey-line {
+    border: 1px solid rgb(230, 221, 221);
+    width: 915px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.companies {
+    display: inline-flex;
+}
+
+.info {
+    display: inline-flex;
+}
+
+select {
+    width: 460px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    color: rgb(101, 99, 99);
+    border: 1px solid rgb(174, 171, 171);
+}
+
+.city {
+    margin-right: 10px;
+}
+
+span {
+    color: red;
+}
+
+label {
+    color: rgb(101, 99, 99);
+}
+
+input {
+    width: 445px;
+    height: 33px;
+    padding: 3px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 1px solid rgb(180, 176, 176);
+}
+
+.courier input {
+    width: 20px;
+    height: 20px;
+    margin: 10px auto;
+    margin-top: 15px;
+    border: 1px solid rgb(172, 168, 168);
+}
+
+::placeholder {
+    color: rgb(208, 201, 201);
+}
+
+.phone-nr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

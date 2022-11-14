@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užsakymo forma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h4>Pristatymas į paštomatus</h4>
+            <div class="grey-line"></div>
+            <div class="companies">
+                <div class="lp-express courier">
+                    <input type="radio" name="company" id=""> <br>
+                    <img src="logos/lp_express.png" alt="">
+                    <p class="delivery-place">Atsiėmimas LP EXPRESS paštomate</p>
+                    <p class="delivery-time">2-4 darbo dienos</p>
+                    <p class="delivery-price">1,99 €</p>
+                </div>
+                <div class="omniva courier">
+                    <input type="radio" name="company" id=""> <br>
+                    <img src="logos/omniva.png" alt="">
+                    <p class="delivery-place">Atsiėmimas Omniva paštomate</p>
+                    <p class="delivery-time">2-4 darbo dienos</p>
+                    <p class="delivery-price">1,99 €</p>
+                </div>
+                <div class="dpd courier">
+                    <input type="radio" name="company" id=""> <br>
+                    <img src="logos/DPD-Emblem.png" alt="">
+                    <p class="delivery-place">Atsiėmimas paštomate</p>
+                    <p class="delivery-time">2-4 darbo dienos</p>
+                    <p class="delivery-price">1,99 €</p>
+                </div>
+            </div>
+            <h4>Pasirinkite pristatymo vietą</h4>
+            <div class="delivery-info info">
+                <label for="">Miestas<span>*</span><br>
+                    <select name="" id="" class="city">
+                        <option value="">Marijampolė</option>
+                        <option value="">Kaunas</option>
+                        <option value="">Vilnius</option>
+                        <option value="">Klaipėda</option>
+                        <option value="">Alytus</option>
+                    </select>
+                </label>
+                <label for="">Paštomato adresas (paštomatas)<span>*</span><br>
+                    <select name="" id="" class="address">
+                        <option value="">PC Arena (Dariaus ir Girėno g.)</option>
+                        <option value="">IKI Jotvingis (Šaulių g.)</option>
+                        <option value="">IKI Vilkaviškio g.</option>
+                        <option value="">Bažnyčios g.</option>
+                        <option value="">Sporto g.</option>
+                    </select>
+                </label>
+            </div>
+            <h4>Pateikite gavėjo duomenis</h4>
+            <div class="info">
+                <label for="">Vardas<span>*</span><br>
+                    <input type="text" placeholder="Vardenis">
+                </label>
+                <label for="">Pavardė<span>*</span><br>
+                    <input type="text" placeholder="Pavardenis">
+                </label>
+            </div>
+            <div class="info">
+                <label class="phone-nr" for="">Mobilaus telefono numeris<span>*</span><br>
+                    <input type="tel" placeholder="+3706925478">
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
