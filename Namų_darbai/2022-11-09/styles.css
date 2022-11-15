@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .tasks {
     text-align: center;
     margin-top: 50px;
@@ -17,11 +21,13 @@
 
 .animals-div img {
     width: 150px;
+    height: 100px;
     margin: 10px;
 }
 
 .landscapes-gallery img {
     width: 33%;
+    height: 400px;
     text-align: center;
 }
 
