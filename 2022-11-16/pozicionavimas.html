@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozicionavimas</title>
+    <style>
+        /* position: static; standartine pagal nutylejima priskiriama pozicija
+        positinio: relative; nurodo kad pagal si elementa lygiuojami visi absoliutus elementai jo viduje
+        position: absolute; lygiuojasi palei atrimiausia realityvu elementa */
+        .relative {
+            background-color: black;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            position: relative;
+            top: 50px;
+            left: 0;
+        }
+
+        .absolute {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            /* margin: 100px 0 0 250px; */
+            top: 0;
+            left: 0;
+            /* right: 0; */
+            /* bottom: 0; */
+        }
+
+        .bottom-right {
+            right: 0;
+            bottom: 0;
+            left: unset;
+            top: unset;
+        }
+
+        .custom-position {
+            top: 50px;
+            left: 500px;
+        }
+
+        .block {
+            margin: 8000px auto 0;
+            background-color: black;
+            width: 700px;
+            height: 300px;
+        }
+
+        .absolute-block {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: purple;
+            top: 8600px;
+            left: 900px;
+        }
+
+        h1 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Statinis turinys</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta molestias veritatis nulla facilis voluptatem nesciunt aut unde in, harum nam optio et reprehenderit impedit voluptate error quidem laborum ullam recusandae debitis? Aperiam ratione inventore dolorum, sit ipsum animi voluptatibus quos. Blanditiis autem id distinctio voluptatem sed commodi unde magnam itaque molestias sunt expedita dignissimos eaque natus temporibus deleniti dolorem, voluptate quaerat accusantium atque. Quibusdam deserunt, similique vel recusandae vitae dolores quos deleniti natus temporibus. Possimus qui nulla magnam eveniet. Ipsam ullam ducimus explicabo iure necessitatibus culpa assumenda ea porro a perspiciatis, tenetur corrupti minus eos quaerat neque autem illum? Consectetur nemo ex aliquid consequatur, excepturi quasi architecto facilis maxime ipsam dolorum! Eius earum porro obcaecati saepe praesentium voluptatibus ad cum odio, ratione fugiat recusandae quisquam nesciunt? Dolor a consequatur facilis nostrum culpa tenetur nobis corrupti, doloribus dicta, ut ducimus omnis quas aspernatur quia molestias rem voluptatum facere eligendi reprehenderit inventore quis quidem recusandae ab! Delectus culpa ipsa harum ducimus maiores quos magni deleniti aut eum assumenda, a eligendi animi tempora tempore hic, veniam quisquam illum, maxime praesentium temporibus id sunt ab! Delectus nemo neque unde aspernatur aliquam pariatur reiciendis nesciunt quam, beatae id facere earum inventore quia ipsam aut sit!</p>
+    <div class="relative">
+        <h1>Tai yra statinis turinys releatyviame elemete</h1>
+        <div class="absolute bottom-right"></div>
+        <div class=" absolute custom-position"></div>
+    </div>
+    <div class="block">
+        <div class="absolute-block"></div>
+    </div>
+</body>
+</html>
