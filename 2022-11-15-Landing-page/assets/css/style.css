@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: purple;
     font-family: 'Montserrat', sans-serif;
+    height: 7000px;
 }
 
 .container {
@@ -58,8 +59,8 @@ section.home {
 
 section.home::before {
     content: "";
-    background: rgb(114,11,193);
-    background: linear-gradient(90deg, rgba(114,11,193,1) 40%, rgba(46,152,173,1) 98%);
+    background: rgb(140,30,199);
+    background: linear-gradient(90deg, rgba(140,30,199,1) 37%, rgba(26,65,237,1) 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -68,6 +69,6 @@ section.home::before {
     opacity: 0.8;
 }
 
-section.home.container {
+section.home .container {
     position: relative;
 }
