@@ -1,0 +1,93 @@
+.example h2, main h2 {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.example img {
+    display: flex;
+    margin: 0 auto;
+}
+
+.planets {
+    background: url('../images/background.png');
+    width: 1200px;
+    height: 720px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.row1, .row2, .row3 {
+    display: inline-block;
+}
+
+img {
+    display: block;
+    padding: 10px;
+}
+
+.absolute {
+    position: absolute;
+}
+
+#planet4 {
+    left: 934px;
+    top: 30px;
+}
+
+#planet3 {
+    top: 42px;
+    left: 653px;
+}
+
+#planet2 {
+    top: 33px;
+    left: 370px;
+}
+
+#planet1 {
+    top: 19px;
+    left: 106px;
+}
+
+#planet8 {
+    top: 259px;
+    left: 941px;
+}
+
+#planet7 {
+    top: 267px;
+    left: 596px;
+}
+
+#planet6 {
+    top: 254px;
+    left: 379px;
+}
+
+#planet5 {
+    top: 260px;
+    left: 123px;
+}
+
+#planet12 {
+    top: 446px;
+    left: 911px;
+}
+
+#planet11 {
+    top: 490px;
+    left: 663px;
+}
+
+#planet10 {
+    top: 492px;
+    left: 312px;
+}
+
+#planet9 {
+    top: 483px;
+    left: 120px;
+}
