@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 struktura</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            padding: 5px 10px;
+        }
+
+        main {
+            display: flex;
+        }
+
+        article {
+            width: 70%;
+        }
+
+        aside {
+            width: 30%;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 15px;;
+        }
+
+        label.hamburger-nav {
+            display: none;
+        }
+
+        input.hidden {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            article, aside {
+                width: 100%;
+            }
+
+            main {
+                display: block;
+            }
+
+            label.hamburger-nav {
+                padding-top: 5px;
+                display: inline-block;
+            }
+
+            label.hamburger-nav span {
+                width: 20px;
+                height: 3px;
+                background-color: black;
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            #hamburger:checked + ul {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            header h1 {
+                font-size: 14px;;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header h1 {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tai yra headeris</h1>
+        <nav>
+            <label class="hamburger-nav" for="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <input type="checkbox" id="hamburger" class="hidden">
+            <ul>
+                <li><a href="#">Pirmas</a></li>
+                <li><a href="#">Antras</a></li>
+                <li><a href="#">Trecias</a></li>
+                <li><a href="#">Ketvirtas</a></li>
+                <li><a href="#">Penktas</a></li>
+                <li><a href="#">Sestas</a></li>
+                <li><a href="#">Septintas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <article>
+            <h1>Straipsnio pavadinimas</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro a dolorem, soluta facilis est ut quibusdam autem provident eum assumenda optio qui ad repudiandae? Assumenda autem odit nostrum nemo sed optio reprehenderit eum, officiis perspiciatis ipsa dicta odio facilis alias soluta illum, totam est dolorem provident ad omnis? Illo magni incidunt veritatis animi. Tenetur illum consectetur tempore quam laboriosam excepturi, recusandae aut cum. Ipsam deleniti labore praesentium, ipsa similique nam consectetur quibusdam excepturi inventore fugit repellat hic. Enim error nesciunt quis ab dolorum voluptatem quae pariatur, odio assumenda molestias voluptates ut officia soluta magnam, voluptas autem. Itaque ab molestias laborum!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro a dolorem, soluta facilis est ut quibusdam autem provident eum assumenda optio qui ad repudiandae? Assumenda autem odit nostrum nemo sed optio reprehenderit eum, officiis perspiciatis ipsa dicta odio facilis alias soluta illum, totam est dolorem provident ad omnis? Illo magni incidunt veritatis animi. Tenetur illum consectetur tempore quam laboriosam excepturi, recusandae aut cum. Ipsam deleniti labore praesentium, ipsa similique nam consectetur quibusdam excepturi inventore fugit repellat hic. Enim error nesciunt quis ab dolorum voluptatem quae pariatur, odio assumenda molestias voluptates ut officia soluta magnam, voluptas autem. Itaque ab molestias laborum!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro a dolorem, soluta facilis est ut quibusdam autem provident eum assumenda optio qui ad repudiandae? Assumenda autem odit nostrum nemo sed optio reprehenderit eum, officiis perspiciatis ipsa dicta odio facilis alias soluta illum, totam est dolorem provident ad omnis? Illo magni incidunt veritatis animi. Tenetur illum consectetur tempore quam laboriosam excepturi, recusandae aut cum. Ipsam deleniti labore praesentium, ipsa similique nam consectetur quibusdam excepturi inventore fugit repellat hic. Enim error nesciunt quis ab dolorum voluptatem quae pariatur, odio assumenda molestias voluptates ut officia soluta magnam, voluptas autem. Itaque ab molestias laborum!</p>
+        </article>
+        <aside>
+            <h2>Naujausi stripsniai</h2>
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>2022m. BIT.lt</p>
+    </footer>
+</body>
+</html>
