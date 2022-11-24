@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 900px;
+    width: 700px;
+}
+
+.main {
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+    background: rgb(98,46,170);
+    background: linear-gradient(90deg, rgba(98,46,170,1) 35%, rgba(13,24,221,1) 85%);
+    max-width: 900px;
+    padding: 50px;
+}
+
+aside {
+    max-width: 500px;
+    width: 350px;
+    max-height: 280px;
+    padding: 20px;
+}
+
+.header,
+.row,
+.delivery,
+.payment-cards,
+aside {
+    background-color: white;
+}
+
+.delivery {
+    margin-top: 20px;
+}
+
+.products img {
+    max-width: 100px;
+}
+
+.payment-cards img {
+    max-width: 200px;
+}
+
+.bin-button,
+.plus-button,
+.minus-button,
+.checkout-button {
+    background-color: blue;
+}
+
+.heart-button {
+    background-color: red;
+}
