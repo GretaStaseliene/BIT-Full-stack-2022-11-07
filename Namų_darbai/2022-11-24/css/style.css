@@ -13,7 +13,7 @@ main {
     justify-content: center;
     background: rgb(98,46,170);
     background: linear-gradient(90deg, rgba(98,46,170,1) 35%, rgba(13,24,221,1) 85%);
-    max-width: 900px;
+    max-width: 1000px;
     padding: 50px;
 }
 
