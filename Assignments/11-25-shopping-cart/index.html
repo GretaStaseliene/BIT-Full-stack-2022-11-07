@@ -1,12 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <nav class="navbar bg-white border-bottom py-0">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand text-primary" href="#">Company Name</a>
+            <div class="input-group mb-3 w-50 mx-lg-auto mt-3">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text bg-primary" id="basic-addon2">
+                    <img src="magnifying-glass.png" alt="search button">
+                </span>
+              </div>
+            <div class="rounded-icons d-flex gap-3 ms-auto pe-3">
+                <div class="shopping-cart p-2 rounded-circle">
+                    <a href="#">
+                        <img src="shopping-cart.png" alt="shopping cart icon">
+                    </a>
+                </div>
+                <div class="personal-account p-2 rounded-circle">
+                    <a href="#">
+                        <img src="user.png" alt="personal account icon">
+                    </a>
+                </div>
+            </div>
+            <div class="welcome">
+                <div><p class="text-muted fs-6 mb-0 mt-2">Welcome!</p></div>
+                <div><p><a href="#" class="text-decoration-none text-dark fs-6 fw-semibold">Sign in</a> | <a href="#" class="text-decoration-none text-dark fs-6 fw-semibold">Register</a></p></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="">
+        <h1 class="my-5 ms-5 fw-bolder">Shopping cart</h1>
+    </header>
+
+    <main class="bg-white">
+        <div class="product-container">
+            <div class="left">
+                <div class="row pt-3">
+                    <div class="col px-5">
+                        <h5 class="fs-6 text-muted text-uppercase">Product</h5>
+                    </div>
+                    <div class="col d-flex gap-5 quantity-and-price">
+                        <h5 class="fs-6 text-muted text-uppercase ">Quantity</h5>
+                        <h5 class="fs-6 text-muted text-uppercase">Price</h5>
+                    </div>
+                </div>
+                <div class="row pt-3 px-5 g-0">
+                    <div class="col d-flex gap-4 product-image">
+                        <img src="blue-shirt.webp" alt="blue short sleeve polo shirt" class="justify-content-center">
+                        <div class="product-info">
+                            <h6 class="product-title">Some name of item goes here nice</h6>
+                            <p class="product-description mb-0 text-muted">Size: XL, Color: blue,</p>
+                            <p class="product-brand text-muted">Brand: Gucci</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex">
+                        <div class="me-5">
+                            <input type="number" placeholder="1" class="quantity-input w-50 ps-2 py-2 px-3 rounded border border-1" min="0">
+                        </div>
+                        <div class="prices">
+                            <p class="current-price mb-0">$1156.00</p>
+                            <p class="price text-muted">$315.20 each</p>
+                        </div>
+                    </div>
+                    <div class="col col-auto">
+                        <button class="heart-btn border border-1 bg-white rounded p-2">
+                            <img src="heart.png" alt="heart button">
+                        </button>
+                        <button class="remove-btn border border-1 bg-white rounded p-2">Remove</button>
+                    </div>
+                </div>
+
+                <div class="row pt-3 px-5 g-0">
+                    <div class="col d-flex gap-4 product-image">
+                        <img src="brown-jacket.webp" alt="brown puff winter jacket" class="justify-content-center">
+                        <div class="product-info">
+                            <h6 class="product-title">Product name goes here nice</h6>
+                            <p class="product-description mb-0 text-muted">Size: XL, Color: blue,</p>
+                            <p class="product-brand text-muted">Brand: Gucci</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex">
+                        <div class="me-5">
+                            <input type="number" placeholder="1" class="quantity-input w-50 ps-2 py-2 px-3 rounded border border-1" min="0">
+                        </div>
+                        <div class="prices">
+                            <p class="current-price mb-0">$149.97</p>
+                            <p class="price text-muted">$75.00 each</p>
+                        </div>
+                    </div>
+                    <div class="col col-auto">
+                        <button class="heart-btn border border-1 bg-white rounded p-2">
+                            <img src="heart.png" alt="heart button">
+                        </button>
+                        <button class="remove-btn border border-1 bg-white rounded p-2">Remove</button>
+                    </div>
+                </div>
+
+                <div class="row pt-3 px-5 g-0">
+                    <div class="col d-flex gap-4 product-image">
+                        <img src="shorts.webp" alt="brown puff winter jacket" class="justify-content-center">
+                        <div class="product-info">
+                            <h6 class="product-title">Another name of some product goes just here</h6>
+                            <p class="product-description mb-0 text-muted">Size: XL, Color: blue, Brand: Tissot</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex">
+                        <div class="me-5">
+                            <input type="number" placeholder="1" class="quantity-input w-50 ps-2 py-2 px-3 rounded border border-1" min="0">
+                        </div>
+                        <div class="prices">
+                            <p class="current-price mb-0">$149.97</p>
+                            <p class="price text-muted">$75.00 each</p>
+                        </div>
+                    </div>
+                    <div class="col col-auto">
+                        <button class="heart-btn border border-1 bg-white rounded p-2">
+                            <img src="heart.png" alt="heart button">
+                        </button>
+                        <button class="remove-btn border border-1 bg-white rounded p-2">Remove</button>
+                    </div>
+                </div>
+                <div class="row border border-1">
+                    <div class="float-left">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
