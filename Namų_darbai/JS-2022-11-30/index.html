@@ -12,6 +12,10 @@
         ol {
             list-style-position: inside;
         }
+        li {
+            margin-top: 15px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -25,9 +29,18 @@
         </li>
         <li>Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
         </li>
+        <li>Sukurti kintamąjį su stringu: “Once upon a time in hollywood”. Jame visas “o” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  Rezultatą atspausdinti.</li>
+        <li>Sukurkite keturis kintamuosius kuriems sugeneruokite atsitiktines reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų.</li>
     </ol>
     <p><b>Rezultatą tikrinti: consolėje</b></p>
+
     <script>
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+            }
 
         // 1 užduotis
         let firstActor = 'Tom Cruise';
@@ -56,6 +69,20 @@
         let newString = actress1[4] + actress1[5] + actress1[6] + actress1[9] + actress1[10] + actress1[11] + actress2[4] + actress2[5] + actress2[6] + actress2[9] + actress2[10] + actress2[11];
 
         console.log(newString);
+
+        // 4 užduotis 
+        let sentence = 'Once upon a time in hollywood';
+
+        console.log(sentence.replaceAll('o', '*').replaceAll('O', '*'));
+
+        // 5 užduotis
+        let random1 = rand(0, 2);
+        let random2 = rand(0, 2);
+        let random3 = rand(0, 2);
+        let random4 = rand(0, 2);
+
+        console.log(random1, random2, random3, random4);
+
     </script>
 </body>
 </html>
