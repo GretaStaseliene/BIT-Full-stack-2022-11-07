@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022-11-30 namų darbai</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        ol {
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kintamieji ir sąlygos</h1>
+    <p>2022-11-30</p>
+    <ol>
+        <li>Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus (Jonas Jonaitis). Atspausdinti trumpesnį stringą.
+        </li>
+        <li>Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį :
+            "Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+        </li>
+        <li>Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+        </li>
+    </ol>
+    <p><b>Rezultatą tikrinti: consolėje</b></p>
+    <script>
+
+        let firstActor = 'Tom Cruise';
+        let secondActor = 'Tom Holland';
+
+        if(firstActor.length > secondActor.length) {
+            console.log(secondActor);
+        } else {
+            console.log(firstActor);
+        }
+
+        let name = 'Greta';
+        let surname = 'Stašelienė';
+        let yearOfBirth = 1994;
+        let currentYear = 2022;
+
+        let myAge = currentYear - yearOfBirth;
+
+        console.log('Aš esu', name, surname + '. Man yra', myAge, 'metai');
+
+        let actress1 = 'Jessica Alba';
+        let actress2 = 'Cameron Diaz';
+
+        let newString = actress1[4] + actress1[5] + actress1[6] + actress1[9] + actress1[10] + actress1[11] + actress2[4] + actress2[5] + actress2[6] + actress2[9] + actress2[10] + actress2[11];
+
+        console.log(newString);
+    </script>
+</body>
+</html>
