@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kondicine logika</title>
+</head>
+<body>
+
+<script>
+    // Atspausdinti fraze "sveiki atvyke, jei x yra daugiau arba lygu 10, o y yra maziau arba lyguu 25"
+
+let x = 10;
+let y = 25;
+
+// 1 variantas
+if(x >= 10) {
+    if (y <= 25) {
+        console.log('sveiki atvyke1');
+    }
+}
+
+// 2 variantas and operatorius
+if(x >= 10 && y <= 25) {
+    console.log('sveiki atvyke2');
+}
+
+// Atspausdinti fraze "sveiki atvyke, jei x yra daugiau arba lygu 10, arba y yra maziau arba lyguu 25"
+
+x = 9;
+
+// or operatorius
+if (x >= 10 || y <= 25) {
+    console.log('sveiki atvyke3');
+}
+
+// atspausdinti sia uzduoti, jei x yra daugiau arba lygu 10, arba y yra maziau arba lyguu 25 arba jeigu abbu variantai neteisingi, taciau z yra lygu 20.
+
+y = 26;
+let z = 20;
+
+
+if (x >= 10 || y <= 25 && z === 20) {
+    console.log('sveiki atvyke4'); 
+}
+
+if (x === 9 && (y === 26 || z === 19)) {
+    console.log('hello hello');
+}
+
+// Bang operatorius
+let w = false;
+
+if (!w) {
+    console.log('nera');
+}
+
+w = true;
+
+if(w) {
+    console.log('yra');
+}
+
+// ternary(shorthand'ai) operatoriai, trumposios if salygos
+
+const lytis = 'M';
+            //  kondicija  ?-if atidarymas  :-else 
+const vardas = lytis === 'M' ? 'Daiva' : 'Valdas';
+console.log(vardas);
+
+// atitikmuo auksciau esanciai eilutei - tradicinis variantas
+// if(lytis === 'M') {
+//     vardas = 'Danguole';
+// } else {
+//     vardas = 'Valdas';
+// }
+</script>
+</body>
+</html>

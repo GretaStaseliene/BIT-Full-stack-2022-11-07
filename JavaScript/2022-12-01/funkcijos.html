@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    
+    <script>
+        let result = '';
+        // Sugeneruojamas atsitiktinis skaicisu nuo 0 iki 1;
+        // random skaicius
+        const skaicius = Math.random();
+        // suapvalina
+        const round = Math.round(skaicius);
+        // suapvalina iki mazesnio skaiciaus pvz 33,9 i 33
+        const floor = Math.floor(skaicius);
+        // suapvalina iki didesnio skaiciaus
+        const ceil = Math.ceil(skaicius);
+        console.log(ceil); 
+
+        // apvalinimas po kablelio iki tam tikro skaiciaus pvz: 4.
+        const poKablelio = skaicius.toFixed(4);
+        console.log(poKablelio);
+
+        // randa didziausia skaiciu
+        const x = 1;
+        const y = 101;
+        const z = 1000;
+        const w = 2;
+
+        console.log('Didziausias skaicius yra:',Math.max(x, y, z, w));
+        // randamas maziausias skaicius
+        console.log('Maziausias skaicius yra:',Math.min(x, y, z, w));
+
+
+        // funkcijos string tipo kintamiesiems apdoroti
+
+        // tikriname ar stringas prasideda ivardintu zodziu
+        let stringas = 'Lorem ipsum dolor sit amet.        '
+
+        // trim() funkcija apkarpo tuscius simbolius paliktus stringe
+        stringas = stringas.trim();
+        console.log(stringas);
+
+        if(stringas.startsWith('Lorem')) {
+            console.log('Stringas prasideda zodziu Lorem');
+        }
+
+        if(stringas.startsWith('ipsum', 6)) {
+            console.log('Stringas prasideda zodziu Ipsum');
+        }
+
+        // tikriname ar stringas baigiasi ivardinta fraze
+        if(stringas.endsWith('.', )) {
+            console.log('Stringas baigiasi tasku');
+        }
+
+        // simbolio paemimas is stringo pagal pozicija (6)
+        result = stringas.charAt(6);
+        console.log(result);
+        // tas pats kaip eiluteje auksciau
+        console.log(stringas[6]);
+
+        // 5, 10, 12 pagal indeksus
+        result = stringas[6] + stringas[10] + stringas[12];
+        console.log(result);
+
+        // charAt variantas pagal indeksus
+        result = stringas.charAt(6) + stringas.charAt(10) + stringas.charAt(12);
+        console.log(result);
+
+        // triju paskutiniu simboliu paemimas dinamiskai, programiskai
+        result = stringas[stringas.length - 1] + stringas[stringas.length - 2] + stringas[stringas.length - 3];
+
+        console.log(result);
+
+        // ipsum zodzio istraukimas is stringo
+        result = stringas.substring(6, 11);
+        console.log(result);
+
+        // triju paskutiniu raidziu paemimas naudojant substring funkcija
+        result = stringas.substring(stringas.length - 3);
+        console.log(result);
+        
+        // inludes() funkcija, tikrina ar fraze egzistuoja stringe
+        if(stringas.includes('dolor')) {
+            console.log('zodis dolor yra musu stringe');
+        }
+
+        // indexOf() funkcija randa norimos frazes pradzios indeksa
+        result = stringas.indexOf('dolor');
+        console.log(result);
+
+        // konvertuoti raides i mazasias arba didziasias naudojame funkcija toLowerCase() arba toUpperCase
+        result = stringas.toLocaleLowerCase();
+        console.log(result);
+
+        result = stringas.toLocaleUpperCase();
+        console.log(result);
+
+    </script>
+</body>
+</html>
