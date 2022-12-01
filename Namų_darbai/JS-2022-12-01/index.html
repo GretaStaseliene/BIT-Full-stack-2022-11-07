@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-01 Namų darbai</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        ol {
+            list-style-position: inside;
+        }
+        li {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kintamieji ir sąlygos</h1>
+    <p>2022-11-30</p>
+    <ol>
+        <li>Pasinaudokite atsitiktinio skaičiaus generavimo funkcija. Sukurkite du kintamuosius ir naudodamiesi funkcija jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+        </li>
+        <li>Naudokite funkciją ir sukurkite tris kintamuosius kuriems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintamąjį turintį vidurinę reikšmę.
+        </li>
+        <li>Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš pirmų vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+        </li>
+        <li>Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.</li>
+    </ol>
+    <p><b>Rezultatą tikrinti: consolėje</b></p>
+
+    <script>
+        // atsitiktinio skaiciaus funkcija
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // 1 uzduotis
+        let x = rand(0, 4);
+        let y = rand(0, 4);
+        let result = 0;
+
+        console.log(x, y);
+
+        if(x > y) {
+            result = x / y;
+            console.log(result.toFixed(2));
+        } else if (x < y) {
+            result = y/ x;
+            console.log(result.toFixed(2));
+        }
+
+        // 2 uzduotis
+        let a = rand(0, 25);
+        let b = rand(0, 25);
+        let c = rand(0, 25);
+
+        console.log(a, b, c);
+
+        if (a > b && a < c) {
+            console.log('vidurinis skaicius yra:', a);
+        } else if (b > a && b < c) {
+            console.log('vidurinis skaicius yra:', b);
+        } else {
+            console.log('vidurinis skaicius yra:', c);
+        }
+
+        // 3 uzduotis
+        let name = 'Miles';
+        let surname = 'Teller';
+
+        let newString = name[0] + surname[0];
+        console.log(newString);
+
+        // 4 uzduotis
+
+        let randomString = Math.random().toString(36).substring(2, 5);
+
+        console.log(randomString.toLowerCase());
+        
+    </script>
+    
+</body>
+</html>
