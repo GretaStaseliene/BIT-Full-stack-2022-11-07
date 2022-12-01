@@ -81,7 +81,61 @@
         let random3 = rand(0, 2);
         let random4 = rand(0, 2);
 
-        console.log(random1, random2, random3, random4);
+        let zeros = 0;
+        let ones = 0;
+        let twos = 0;
+
+        // 1variantas  
+        if(random1 === 0) {
+            zeros++;
+        }
+
+        if(random2 === 0) {
+            zeros++;
+        }
+
+        if(random3 === 0) {
+            zeros++;
+        }
+
+        if(random4 === 0) {
+            zeros++;
+        }
+
+        if(random1 === 1) {
+            ones++;
+        }
+
+        if(random2 === 1) {
+            ones++;
+        }
+
+        if(random3 === 1) {
+            ones++;
+        }
+
+        if(random4 === 1) {
+            ones++;
+        }
+
+        if(random1 === 2) {
+            twos++;
+        }
+
+        if(random2 === 2) {
+            twos++;
+        }
+
+        if(random3 === 2) {
+            twos++;
+        }
+
+        if(random4 === 2) {
+            twos++;
+        }
+
+        console.log('Gauti skaiciai:', random1, random2, random3, random4);
+        console.log('Gauti rezultatai:', zeros, ones, twos);
 
     </script>
 </body>
