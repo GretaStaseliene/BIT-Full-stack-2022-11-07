@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 .heading p {
     font-size: 18px;
     line-height: 34px;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 header {
@@ -78,7 +78,7 @@ header nav ul a {
     text-decoration: none;
     padding: 10px 12px;
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     transition: all 300ms ease-in-out;
     font-family: 'Montserrat', sans-serif;
 }
@@ -109,9 +109,9 @@ section.home::before {
 
 section.home::after {
     content: "";
-    background: url(../images/waves.svg) repeat-x;
+    background: url(../images/waves.svg) repeat-x top left;
     width: 100%;
-    height: 29px;
+    height: 28px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -186,7 +186,7 @@ section.clients .container {
 
 section.clients .label {
     color: #707070;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 section.clients ul {
@@ -213,10 +213,10 @@ section.features .feature-box {
 
 section.features .inner-box {
     box-shadow: 0 0 30px rgb(0 0 0 / 11%);
-    padding: 50px 40px;
-    border: 5px;
+    padding: 50px 45px;
+    border-radius: 5px;
     border-top: 4px solid;
-    transition: all 0.2s ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 section.features .inner-box:hover {
@@ -228,7 +228,7 @@ section.features .border-deep-purple {
 }
 
 section.features .border-blue {
-    border-color: #3264f5;;
+    border-color: #3264f5;
 }
 
 section.features .border-purple {
@@ -240,7 +240,7 @@ section.features .feature-box img {
 }
 
 section.features .feature-box h3 {
-    font-weight: 600;
+    font-size: 18px;
     margin: 2rem 0 1rem;
 }
 
@@ -257,7 +257,7 @@ section.features .feature-tag {
 }
 
 section.features .color-1 {
-    background: rgba(255, 22, 78, 0.15);
+    background-color: rgba(255, 22, 78, 0.15);
     color: #ff164e;
 }
 
@@ -309,19 +309,19 @@ section.tabs .tabs-nav ul li:hover {
 }
 
 section.tabs .color-1 {
-    color: rgb(236, 24, 24);
+    color: rgb(247, 215, 35);
 }
 
 section.tabs .color-2 {
-    color: rgb(176, 102, 195);
+    color: rgb(165, 7, 212);
 }
 
 section.tabs .color-3 {
-    color: rgb(45, 45, 232);
+    color: rgb(7, 31, 212);
 }
 
 section.tabs .color-4 {
-    color: rgb(212, 128, 17);
+    color: rgb(234, 8, 65);
 }
 
 section.tabs .content {
@@ -329,9 +329,9 @@ section.tabs .content {
     padding-top: 3rem;
 }
 
-section.tabs .left, 
+section.tabs .left,
 section.tabs .right {
-    width: 50%;
+    width: 50%;    
 }
 
 section.tabs .right {
@@ -343,13 +343,13 @@ section.tabs .right img {
 }
 
 section.tabs .left .number {
-    font-size: 70px;
     color: #7202bb;
+    font-size: 70px;
 }
 
 section.tabs .left h3 {
     font-size: 30px;
-    margin-top: 12px 0 1.5rem;
+    margin: 12px 0 1.5rem;
 }
 
 section.tabs .left p {
@@ -365,11 +365,12 @@ section.tabs .left a:hover {
     color: #7202bb;
 }
 
-section.tabs .left a::before {
+section.tabs .left a::before,
+section.tabs .left a::after {
     content: "";
     width: 1px;
     height: 10px;
-    background-color: #3264f5;
+    background: #3264f5;
     position: absolute;
     top: 10px;
     right: -15px;
@@ -377,13 +378,7 @@ section.tabs .left a::before {
 }
 
 section.tabs .left a::after {
-    content: "";
-    width: 1px;
-    height: 10px;
-    background-color: #3264f5;
-    position: absolute;
     top: 3px;
-    right: -15px;
     transform: rotate(-45deg);
 }
 
@@ -405,12 +400,12 @@ section.technology .right-column {
     line-height: 1.7rem;
 }
 
-section.technology i.bi {
+section.technology .right-column i.bi {
     color: white;
     background-color: #6a06ad;
     font-size: 24px;
-    display: inline-block;
     width: 55px;
+    display: inline-block;
     height: 55px;
     text-align: center;
     line-height: 47px;
@@ -444,15 +439,14 @@ section.screenshots .slider img {
 }
 
 section.screenshots .iphone-frame {
-    position: absolute;
     width: 285px;
     height: 518px;
-    background: url('../images/phone-frame2.png') no-repeat center center;
+    background: url(../images/phone-frame2.png) no-repeat center center;
     background-size: 100% 100%;
     top: 3px;
-    left: 45%;
+    left: 50%;
     z-index: 2;
-    transform: translateX(-50%);
+    transform: translateX(-50%)
 }
 
 section.screenshots .slider li.active img {
@@ -484,7 +478,7 @@ section.testimonials .testimonial {
     font-size: 15px;
     line-height: 28px;
     border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0 0 0 / 8%);
+    box-shadow: 0 2px 2px rgb(0 0 0 / 8%);
     margin-bottom: 3rem;
     position: relative;
 }
@@ -563,7 +557,7 @@ section.pricing .box .features {
 }
 
 section.pricing .box .features li {
-    padding: 0.3rem 0;
+    padding: .3rem 0;
 }
 
 .buttons {
@@ -574,7 +568,7 @@ section.pricing .box .features li {
 
 .button {
     display: block;
-    padding: 14px 20px;
+    padding: 10px 25px;
     border: 1px solid white;
     font-weight: 600;
     font-size: 15px;
@@ -585,7 +579,7 @@ section.pricing .box .features li {
 }
 
 .button i {
-    margin-right: 0.5rem;
+    margin-right: .5rem;
 }
 
 .white-button {
@@ -606,7 +600,7 @@ section.pricing .box .features li {
 .purple-border-button {
     color: #7202bb;
     border: 2px solid #7202bb;
-    transition: all 0.2s ease-in-out;
+    transition: all .2s ease-in-out;
     font-weight: 400;
 }
 
@@ -618,7 +612,7 @@ section.pricing .box .features li {
 .purple-fill-button {
     background-color: #7202bb;
     color: white;
-    transition: all 0.2s ease-in-out;
+    transition: all .2s ease-in-out;
     border: 2px solid #7202bb;
     font-weight: 400;
 }
@@ -642,18 +636,18 @@ section.pricing .box .features li {
 
 .pricing-buttons button {
     background: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
-    padding: 0.35rem 1rem;
+    padding: .35rem 1rem;
     border: 2px solid #7202bb;
     border-right: none;
-}
+} 
 
 .pricing-buttons button.active {
-   background-color: #7202bb;
-   color: white;
-}
+    background: #7202bb;
+    color: white;
+} 
 
 .pricing-buttons button:first-child {
     border-radius: 3px 0 0 3px;

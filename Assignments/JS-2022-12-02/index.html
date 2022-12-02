@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday Challenge</title>
+</head>
+<body>
+    <h1>Užduotys</h1>
+    <ol>
+        <li>Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite rand() funkcija nuo 5 iki 3000.</li>
+        <li>Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėmis reikšmėmis nuo 0 iki 100. Suskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus apvalinkite iki sveiko skaičiaus.</li>
+        <li>Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją rand(). Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių.</li>
+    </ol>
+
+    <script>
+        // finkcija - atsitiktiniam skaičiui sugeneruoti
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // 1 užduotis
+        let candles = rand(5, 3000);
+        let price = candles * 1;
+
+        console.log(candles);
+
+        if(candles > 1000) {
+            console.log(price - (price * 3 / 100));
+        } else if (candles > 2000) {
+            console.log(price - (price * 4 / 100));
+        } else {
+            console.log(price);
+        }
+
+        // 2 užduotis
+        let first = rand(0, 100);
+        let second = rand(0, 100);
+        let third = rand(0, 100);
+
+        let average = (first + second + third) / 3;
+
+        console.log(first, second, third);
+        console.log(Math.round(average));
+
+        // if(first > 10 || first < 90) {
+        //     if(second > 10 || second < 90) {
+        //         if(third > 10 || third < 90) {
+        //             console.log(Math.round(average));
+        //         }
+        //     }
+        // }
+
+        // 3 užduotis 
+        
+    </script>
+</body>
+</html>
