@@ -39,18 +39,41 @@
         // 2. Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni.
         document.write('<h2>2 užduotis</h2>');
 
-        const number = rand(-10, 10);
-        let result = '';
+        const number1 = rand(-10, 10);
+        let result1 = '';
 
-        if (number < 0) {
-            result = '<h2 style="color:green">' + number + '</h2>';
-        } else if (number === 0) {
-            result = '<h2 style="color:red">' + number + '</h2>';
+        const number2 = rand(-10, 10);
+        let result2 = '';
+
+        const number3 = rand(-10, 10);
+        let result3 = '';
+
+        if (number1 < 0) {
+            result1 = '<h2 style="color:green">' + number1 + '</h2>';
+        } else if (number1 === 0) {
+            result1 = '<h2 style="color:red">' + number + '</h2>';
         } else {
-            result = '<h2 style="color:blue">' + number + '</h2>';
+            result1 = '<h2 style="color:blue">' + number1 + '</h2>';
         }
+        document.write(result1);
 
-        document.write(result);
+        if (number2 < 0) {
+            result2 = '<h2 style="color:green">' + number2 + '</h2>';
+        } else if (number2 === 0) {
+            result2 = '<h2 style="color:red">' + number2 + '</h2>';
+        } else {
+            result2 = '<h2 style="color:blue">' + number2 + '</h2>';
+        }
+        document.write(result2);
+
+        if (number3 < 0) {
+            result3 = '<h2 style="color:green">' + number3 + '</h2>';
+        } else if (number3 === 0) {
+            result3 = '<h2 style="color:red">' + number3 + '</h2>';
+        } else {
+            result3 = '<h2 style="color:blue">' + number3 + '</h2>';
+        }
+        document.write(result3);
 
         // 3. Sukurkite kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir “It's a Wonderful Life”.
         document.write('<h2>3 užduotis</h2>');
@@ -87,16 +110,18 @@
 
         // 5. Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytųsi ekrane.
         document.write('<h2>5 užduotis</h2>');
-        // truksta nuimti paskutini kableli
 
         i = 0;
+        result = '';
 
         while (i < 3000) {
             if (i !=0 && i % 77 === 0) {
-                document.write(i + ',');
+                result = result + i + ',';
             }
             i++;
         }
+        result = result.slice(0, result.length - 1);
+        document.write(result);
     </script>
 </body>
 </html>
