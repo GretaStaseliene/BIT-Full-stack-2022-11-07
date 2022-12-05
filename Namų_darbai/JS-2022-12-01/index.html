@@ -48,12 +48,15 @@
         console.log(x, y);
 
         if(x > y) {
-            result = x / y;
-            console.log(result.toFixed(2));
-        } else if (x < y) {
-            result = y/ x;
-            console.log(result.toFixed(2));
+            if(y === 0) {
+                result = 'Dalyba is 0 negalima';
+            } else {
+                result = x / y;
+            }
+        } else {
+            result = (y / x).toFixed(2);
         }
+        console.log(result);
 
         // 2 uzduotis
         let a = rand(0, 25);
@@ -62,13 +65,21 @@
 
         console.log(a, b, c);
 
-        if (a > b && a < c) {
-            console.log('vidurinis skaicius yra:', a);
-        } else if (b > a && b < c) {
-            console.log('vidurinis skaicius yra:', b);
-        } else {
-            console.log('vidurinis skaicius yra:', c);
-        }
+        // 1 variantas
+        // if (a === b || b === c || a === c) {
+        //     console.log('Vidurines reiksmes nera');
+        // } else if (a > b && a < c) {
+        //     console.log('vidurinis skaicius yra:', a);
+        // } else if (b > a && b < c) {
+        //     console.log('vidurinis skaicius yra:', b);
+        // } else {
+        //     console.log('vidurinis skaicius yra:', c);
+        // }
+
+        // 2 variantas
+        const min = Math.min(a, b, c);
+        const max = Math.max(a, b, c);
+        console.log('vidurine reiksme:', (a + b + c) - (min + max)); 
 
         // 3 uzduotis
         let name = 'Miles';
@@ -78,11 +89,13 @@
         console.log(newString);
 
         // 4 uzduotis
-
-        let randomString = Math.random().toString(36).substring(2, 5);
-
-        console.log(randomString.toLowerCase());
         
+        const string = 'abcdefghijklmnopqrstuvwxyz';
+        const number1 = rand(0, string.length - 1);
+        const number2 = rand(0, string.length - 1);
+        const number3 = rand(0, string.length - 1);
+
+        console.log(string[number1] + string[number2] + string[number3]);
     </script>
     
 </body>
