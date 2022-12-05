@@ -26,7 +26,7 @@
         let candles = rand(5, 3000);
         let price = candles * 1;
 
-        console.log(candles);
+        console.log('1uzd. ' + candles);
 
         if(candles > 1000) {
             console.log(price - (price * 3 / 100));
@@ -40,19 +40,30 @@
         let first = rand(0, 100);
         let second = rand(0, 100);
         let third = rand(0, 100);
+        let sum = 0;
+        let numbers = 0;
 
         let average = (first + second + third) / 3;
 
-        console.log(first, second, third);
-        console.log(Math.round(average));
+        console.log('2uzd. ' + first, second, third);
+        console.log('2uzd. ' + Math.round(average));
 
-        // if(first > 10 || first < 90) {
-        //     if(second > 10 || second < 90) {
-        //         if(third > 10 || third < 90) {
-        //             console.log(Math.round(average));
-        //         }
-        //     }
-        // }
+        if(first > 10 && first < 90) {
+            sum += first;
+            numbers++;
+        }
+
+        if(second > 10 && second < 90) {
+            sum += second;
+            numbers++;
+        }
+
+        if(third > 10 && third < 90) {
+            sum += third;
+            numbers++;
+        }
+
+        console.log('2uzd. ' + (sum / numbers).toFixed(2));
 
         // 3 užduotis.
         let hours = rand(0, 23);
@@ -61,7 +72,7 @@
 
         let clock = hours + ':' + minutes + ':' + seconds;
 
-        console.log(clock);
+        console.log('3uzd. ' + clock);
 
     </script>
 </body>
