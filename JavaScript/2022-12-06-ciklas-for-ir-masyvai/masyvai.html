@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai</title>
+</head>
+
+<body>
+
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        const masyvas = ['Labas Pasauli', 10, false, null, 15, 20];
+        console.log(masyvas);
+
+        const products = ['Televizorius LG', 'UABH51645', 600.99, 1];
+
+        // Multidimencinis masyvas
+        const multipleProducts = [
+            ['Televizorius LG', 'UABH51645', 600.99, 1],
+            ['Televizorius LG', 'UABH51645', 600.99, 1],
+            ['Televizorius LG', 'UABH51645', 600.99, 1],
+        ];
+
+        console.log(multipleProducts[0]);
+
+        // Masyvo ilgio nustatymas
+        console.log(multipleProducts[0].length);
+
+        // Istrynimas is masyvo
+        delete multipleProducts[0];
+
+        console.log(multipleProducts);
+
+        // Pakeista reiksme
+        multipleProducts[1] = 'Dabar elementas tapo stringu';
+
+        console.log(multipleProducts);
+
+        // friday challenge uzduoties modifikavimas
+        
+        const skaiciai = [];
+
+        // 100 skaiciu masyvo generavvimas
+        for(let i = 0; i < 100; i++) {
+            skaiciai[i] = rand(0, 100);
+        }
+
+        console.log(skaiciai);
+
+        let total = 0;
+        let excluded = 0;
+        let numbers = 0;
+
+        for(let i = 0; i < skaiciai.length; i++) {
+            total += skaiciai[i];
+
+            if(skaiciai[i] > 10 && skaiciai[i] < 90) {
+                excluded += skaiciai[i];
+                numbers++;
+            }
+        }
+
+        console.log('Vidurkis: ', (total / skaiciai.length).toFixed(2));
+        console.log('Vidurkis atmetus reiksmes: ', (excluded / numbers).toFixed(2));
+
+        // exercise
+
+        const array = [];
+
+        for (let i = 0; i < 30; i++) {
+            array[i] = rand(5, 25);
+        }
+
+        console.log(array);
+
+        // masyvo tikrinimas
+
+        let counter = 0;
+        let max = 0;
+        let indexes = [];
+
+        for (let i = 0; i < array.length; i++) {
+            if(array[i] > 10) {
+                counter++;
+            }
+
+            if(array[i] >= max) {
+                max = array[i];
+            }
+
+            if(array[i] === max) {
+                indexes[indexes.length] = i;
+            }
+        }
+        console.log(max);
+        console.log(indexes);
+
+        // console.log(counter);
+    </script>
+</body>
+
+</html>
