@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvo funkcijos</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Includes metodas!
+
+        let masyvas = ['Test', 10, 'Apelsinas', false];
+
+        // Patikrinkite masyva ar jame yra elementas su skaiciumi 10.
+
+        // 1 variantas
+        if (masyvas.includes(10)) {
+            console.log('Tokia reiksme egzistuoja');
+        }
+
+        // 2 variantas
+        let ieskomas = 10;
+
+        for(i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] === ieskomas) {
+                console.log('Tokia reiksme egzistuoja');
+            }
+        }
+
+        // Split metodas!
+
+        // Stringe "Once upon a time in hollywood" pakeiskite visas pirmasias zodziu raides didziosiomis X
+
+        let stringas = 'Once upon a time in hollywood';
+
+        masyvas = stringas.split(' ');
+        
+        let naujasMasyvas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            let zodis = '';
+
+            for(let x = 0; x < masyvas[i].length; x++) {
+                zodis += x === 0 ? 'X' : masyvas[i][x];
+            }
+            naujasMasyvas[i] = zodis;
+        }
+        console.log(naujasMasyvas);
+
+        // Join metodas! Sujungia masyva i stringa
+
+        naujasMasyvas = naujasMasyvas.join(' ');
+
+        console.log(naujasMasyvas);
+
+        // Push metodas!
+
+        // norint prideti naujas reiksmes is galo
+
+        masyvas = [];
+
+        for(let i = 0; i < 100; i++) {
+            // masyvas[masyvas.length] = rand(0, 100);
+            masyvas.push(rand(0, 100));
+        }
+
+        let norimasPridetiMasyvas = ['Apelsinas', 'Bananai', 'Obuoliai'];
+
+        // ... spread sintakse
+
+        masyvas.push(...norimasPridetiMasyvas);
+
+        console.log(masyvas);
+
+        // norint ideti reiksmes is priekio
+        // metodas - Unshift
+
+        masyvas.unshift(...norimasPridetiMasyvas);
+
+        console.log(masyvas);
+
+        // metodas - Splice galime ideti i norima pozicija norimus elementus. Jos pekeicia jau esamas reiksmes toje vietoje
+
+        norimasPridetiMasyvas = ['Audi', 'BMW', 'Fiat', 'Toyota', 'Crysler', 'Dodge'];
+
+        masyvas.splice(30, norimasPridetiMasyvas.length, ...norimasPridetiMasyvas);
+
+        console.log(masyvas);
+
+        // dvieju masyvu sujungimas i nauja su Concat metodu
+
+        masyvas = [];
+        let pirmasMasyvas = [false, false, false];
+        let antrasMasyvas = [true, true, true];
+
+        masyvas = pirmasMasyvas.concat(antrasMasyvas);
+
+        console.log(masyvas);
+
+        // galime salinti is masyvo paskutini elementa su metodu - Pop
+
+        masyvas.pop();
+
+        console.log(masyvas);
+
+        // pasalinti pirma elementa is masyvo Shift metodas
+
+        masyvas.shift();
+
+        console.log(masyvas);
+
+        // norint istrinti specifine reiksme
+
+        masyvas.splice(2, 1);
+
+        console.log(masyvas);
+
+        // norint isrusiuoti masyva pagal abecele metodas - sort
+
+        masyvas = ['BMW', 'Fiat', 'Toyota', 'Crysler', 'Audi'];
+
+        masyvas.sort();
+
+        console.log(masyvas);
+
+        // rusiavimas su skaiciais
+
+        masyvas = [];
+
+        for(let i = 0; i < 100; i++) {
+            masyvas.push(rand(0, 100));
+        }
+
+        // skaiciu rusiavimui naudojama arrow funkcija
+        masyvas.sort((a, b) => a - b);
+
+        console.log(masyvas);
+
+        // norint atvirksciai rikiuoti masyva
+
+        masyvas = ['BMW', 'Fiat', 'Toyota', 'Crysler', 'Audi'];
+
+        masyvas.reverse();
+
+        console.log(masyvas);
+
+        // tikriname ar tai yra masyvas su metodu - isArray
+
+        masyvas = 'Stringas';
+
+        if(Array.isArray(masyvas)) {
+            console.log('Reiksme yra masyvsa');
+        } else {
+            console.log('Reiksme nera masyvas');
+        }
+
+        // indexOf - elemento indekso suradimas
+
+        masyvas = ['BMW', 'Fiat', 'Toyota', 'Crysler', 'Audi'];
+
+        console.log(masyvas.indexOf('Crysler'));
+        // neradus reiksmes bus grazinamas -1;
+
+        // masyva konvertuoti i stringa su metodu - toString
+
+        console.log(masyvas.toString());
+
+    </script>
+</body>
+</html>
