@@ -48,32 +48,74 @@
         const number3 = rand(-10, 10);
         let result3 = '';
 
-        if (number1 < 0) {
-            result1 = '<h2 style="color:green">' + number1 + '</h2>';
-        } else if (number1 === 0) {
-            result1 = '<h2 style="color:red">' + number + '</h2>';
-        } else {
-            result1 = '<h2 style="color:blue">' + number1 + '</h2>';
-        }
-        document.write(result1);
+        // 1 variantas
 
-        if (number2 < 0) {
-            result2 = '<h2 style="color:green">' + number2 + '</h2>';
-        } else if (number2 === 0) {
-            result2 = '<h2 style="color:red">' + number2 + '</h2>';
-        } else {
-            result2 = '<h2 style="color:blue">' + number2 + '</h2>';
-        }
-        document.write(result2);
+        // if (number1 < 0) {
+        //     result1 = '<h2 style="color:green">' + number1 + '</h2>';
+        // } else if (number1 === 0) {
+        //     result1 = '<h2 style="color:red">' + number + '</h2>';
+        // } else {
+        //     result1 = '<h2 style="color:blue">' + number1 + '</h2>';
+        // }
+        // document.write(result1);
 
-        if (number3 < 0) {
-            result3 = '<h2 style="color:green">' + number3 + '</h2>';
-        } else if (number3 === 0) {
-            result3 = '<h2 style="color:red">' + number3 + '</h2>';
-        } else {
-            result3 = '<h2 style="color:blue">' + number3 + '</h2>';
+        // if (number2 < 0) {
+        //     result2 = '<h2 style="color:green">' + number2 + '</h2>';
+        // } else if (number2 === 0) {
+        //     result2 = '<h2 style="color:red">' + number2 + '</h2>';
+        // } else {
+        //     result2 = '<h2 style="color:blue">' + number2 + '</h2>';
+        // }
+        // document.write(result2);
+
+        // if (number3 < 0) {
+        //     result3 = '<h2 style="color:green">' + number3 + '</h2>';
+        // } else if (number3 === 0) {
+        //     result3 = '<h2 style="color:red">' + number3 + '</h2>';
+        // } else {
+        //     result3 = '<h2 style="color:blue">' + number3 + '</h2>';
+        // }
+        // document.write(result3);
+
+        // 2 variantas
+
+        // const skaiciai = [];
+        // let result = '';
+
+        // for(let i = 0; i < 50; i++) {
+        //     skaiciai.push(rand(-10, 10));
+        // }
+
+        // for(let i = 0; i < skaiciai.length; i++) {
+        //     if(skaiciai[i] < 0) {
+        //         result += '<span style="color: green;">' + skaiciai[i] + '</span>'
+        //     } else if (skaiciai[i] === 0) {
+        //         result += '<span style="color: red;">' + skaiciai[i] + '</span>'
+        //     } else {
+        //         result += '<span style="color: blue;">' + skaiciai[i] + '</span>'
+        //     }
+        // }
+
+        // document.write(result);
+
+        // 3 variantas
+
+        const skaiciai = [];
+
+        for(let i = 0; i < 50; i++) {
+            const skaicius = rand(-10, 10);
+            let spalva = 'blue';
+
+            if(skaicius < 0) {
+                spalva = 'green';
+            } else if (skaicius === 0) {
+                spalva = 'red';
+            }
+
+            skaiciai.push('<span style="color: ' + spalva + ';">' + skaicius + '</span>');
         }
-        document.write(result3);
+
+        document.write(skaiciai);
 
         // 3. Sukurkite kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir “It's a Wonderful Life”.
         document.write('<h2>3 užduotis</h2>');
