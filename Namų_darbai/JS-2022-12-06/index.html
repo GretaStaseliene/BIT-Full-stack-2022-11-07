@@ -65,15 +65,17 @@
 
         moneta = ''; 
 
-        while(moneta !== 'Herbas') {
+        while(true) {
             atsitiktinis = rand(0, 1);
-            if(atsitiktinis == herbas) {
-                moneta = 'Herbas';
+
+            if(atsitiktinis === 0) {
+                moneta += 'Herbas';
+                break;
             } else {
-                moneta = 'Skaicius';
+                moneta += 'Skaicius';
             }
-        document.write(moneta + ' ');
         }
+        document.write(moneta + ' ');
 
         document.write('<h4>3 b) užduotis</h4>');
 
@@ -93,7 +95,26 @@
 
         document.write('<h4>3 c) užduotis</h4>');
 
-        
+        moneta = '';
+        let skaiciuotuvas = 0;
+
+        while(true) {
+            atsitiktinis = rand(0, 1);
+
+            if(atsitiktinis === 0) {
+                moneta += "H";
+                skaiciuotuvas++;
+            } else {
+                moneta =+ "S";
+                skaiciuotuvas = 0;
+            }
+
+            if(skaiciuotuvas >= 3) {
+                break;
+            }
+        }
+
+        document.write(moneta);
 
         // 4. Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
         document.write('<h2>4 - 5 užduotys</h2>');
@@ -127,17 +148,20 @@
             if (numbersArr[i] >= max) {
                 max = numbersArr[i];
             }
-
-            if (numbersArr[i] === max) {
-                indexes[indexes.length] = i;
-            }
-
         }
+
         document.write('<h4>5 a) užduotis</h4>');
         document.write('Skaiciu didesniu uz 10 yra: ', quantityOfNumbers);
 
         document.write('<h4>5 b) užduotis</h4>');
         document.write('Didziausia masyvo reiksme yra: ', max);
+
+        for(let i = 0; i < numbersArr.length; i++){
+            if (numbersArr[i] === max) {
+                indexes[indexes.length] = i;
+            }
+        }
+        
         document.write('<br><br><br> Didziausisos masyvo reiksmes indexai yra: ', indexes);
 
 
@@ -159,6 +183,7 @@
         for (i = 0; i < numbersArr.length; i++) {
             newArray[i] = numbersArr[i] - i;
         }
+
         document.write('Naujas masyvas: ', newArray);
 
 
@@ -183,11 +208,11 @@
         // si variantas rusiuoja lyginius ir nelyginius elementus, ne indeksus
 
         // for (let i = 0; i < numbersArr.length; i++) {
-        //     if(numbersArr[i] % 2 == 0) {
+        //     if(numbersArr[i] % 2 === 0) {
         //         porinisMasyvas.push(numbersArr[i]);
         //     }
 
-        //     if(numbersArr[i] % 2 == 1) {
+        //     if(numbersArr[i] % 2 === 1) {
         //         neporinisMasyvas.push(numbersArr[i]);
         //     } 
         // }
