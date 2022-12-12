@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // ------------------Funkcijos be argumentu----------------------------//
+
+        // 1. Sukurkite ir iškvieskite funkciją, kuri į ekraną išvestų trumpą eilėraštį.
+
+        document.write('<h2>1 užduotis</h2>'); 
+
+        function poem() {
+            document.write('Eglutė skarota, eglutė žalia. Meškutė gauruota ją lanko miške.');
+        }
+
+        poem();
+
+        // 2. Sukurkite ir iškvieskite funkciją, kurioje kintamuosiuose būtų saugoma informacija apie policininką (vardas, pavardė, amžius, alga, etatas, specializacija). Išveskite šią informaciją suformatuotai (pavyzdžiui įterpkite į sakinį, ar išveskite sąrašu ar pan.).
+
+        document.write('<h2>2 užduotis</h2>');  
+
+        function policemanInfo() {
+            const name = 'Jonas';
+            const surname = 'Jonaitis';
+            const age = 28;
+            const salary = 1000;
+            const etatas = 'pilnu';
+            const specialization = 'tyrėjas';
+
+            document.write('Policininkas, vardu - ', name, ' pavarde - ', surname, ' yra ', age, ' metų amžiaus. ', 'Šiuo metu ', name, ' uždirba ', salary, ' eurų, todėl kad dirba ', etatas, ' etatu. ', surname, ' specialicazija yra - ', specialization);
+        }
+
+        policemanInfo();
+
+        // 3. Sukurkite ir iškvieskite funkciją, kuri išvestų sąrašą (ul žyma). Jame galite išvesti pasirinktą informaciją (pirkiniai, mėgstamiausi filmai ar pan.).
+
+        document.write('<h2>3 užduotis</h2>');  
+
+        function shoppingCart() {
+            const groceries = ['Pienas', 'Obuoliai', 'Varškė', 'Miltai', 'Duona', 'Vanduo'];
+
+            for(let i = 0; i < groceries.length; i++) {
+                document.write('<ul><li>' + groceries[i] + '</li></ul>');
+            }
+        }
+
+        shoppingCart();
+
+        // 4. Sukurkite ir iškvieskite funkciją, kuri sugeneruotų lentelę. Pirmame ir antrame stulpeliuose turi būti atsitiktinai sugeneruoti skaičiai, o trečiame - tos eilutės skaičių suma.
+
+        document.write('<h2>4 užduotis</h2>');  
+
+        function generateTable() {
+            document.write('<table border=1>' + '<th>Pirmas skaicius</th>' + '<th>Antras skaicius</th>' + '<th>Suma</th>');
+
+            for(let i = 0; i < 10; i++) {
+                document.write('<tr>');
+
+                let sum = 0;
+
+                for(let j = 0; j < 3; j++) {
+                    if(j == 2) {
+
+                        document.write('<td>' + sum + '</td>');
+
+                    } else {
+
+                        let randomNumber = rand(1, 100);
+                        sum += randomNumber;
+                        document.write('<td>' + randomNumber + '</td>');
+
+                    }
+                }
+
+                document.write('</tr>');
+            }
+
+            document.write('</table>');
+        }
+
+        generateTable();
+
+        // 5.  Sukurkite ir iškvieskite funkciją, kurioje turėtumėte skaičių masyvą. Šio masyvo skaičius išveskite į ekraną atskiriant tarpu
+
+        document.write('<h2>5 užduotis</h2>');
+
+        function printArray() {
+            const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            for(let i = 0; i < array.length; i++) {
+                document.write(array[i] + ' ');
+            }
+        }
+
+        printArray();
+
+        // 6. Sukurkite funkciją, kuri išvestų 10 atsitiktinių skaičių vienoje eilutėje, skaičius atskiriant tarpu. Šią funkciją iškvieskite 5 kartus.
+
+        document.write('<h2>6 užduotis</h2>');
+
+        function randomNumbers() {
+            let i = 0;
+            result = '';
+
+            while (i < 10) {
+                randNum = rand(1, 100);
+                i++;
+                result = randNum + ' ';
+                document.write(result);
+            }
+        }
+
+        randomNumbers();
+        document.write('<br>');
+        randomNumbers();
+        document.write('<br>');
+        randomNumbers();
+        document.write('<br>');
+        randomNumbers();
+        document.write('<br>');
+        randomNumbers();
+
+        // 7. Sukurkite funkciją, kuri išvestų 1 atsitiktinį skaičių, bei po jo padėtų vieno simbolio tarpą. Šią funkciją kvieskite (nebe pačios funkcijos ribose) cikle, kuris būtų vykdomas 100 kartų.
+
+        document.write('<h2>7 užduotis</h2>');
+
+        function oneRandomNumber() {
+            document.write(rand(1, 100));
+        }
+
+        i = 0;
+        let numbers = '';
+
+        while(i < 100) {
+            i++;
+            numbers += oneRandomNumber();
+        }
+        document.write(numbers);
+
+        // 8. Sukurkite funkciją, kuri iš joje sukurto masyvo su žodžiais paimtų kurį nors žodį atsitiktinai ir jį išvestų. Sukurkite antrą funkciją, kuri sugeneruotų atsitiktinį skaičių ir jį išvestų. Sukurkite ir iškvieskite trečią funkciją, kuri iškviestų kitas dvi funkcijas.
+
+        document.write('<h2>7 užduotis</h2>');
+
+        
+
+    </script>
+</body>
+</html>
