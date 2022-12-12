@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+
+<body>
+
+    <script>
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        function sudetis(a, b, c) {
+            // tarp skliausteliu irasomi perduodami parametrai
+
+            // console.log('Funkcijoje jauti parametrai', a, b, c);
+
+            return a + b + c;
+        }
+
+        const x = 10;
+        const z = 20;
+        const y = 30;
+
+        let res = sudetis(x, z, y);
+
+        sudetis(x, z, y);
+        // iskvieciame funkcija tarp skliausteliu perduodami argumentus
+
+        console.log('Rezultatas', res);
+
+        // Sugeneruokite 300 atsitiktinu stringu, sudaryta is lotynisku mazuju raidziu. Stringo ilgis 3 - 12 (atsitiktinis skaicius) raides
+        // Sustabdykite stringu generavima jeihu masyve turime daugiau nei 100 reiksmiu kuriu ilgis 5 simboliai ar daugiau
+
+        const stringas = 'abcdefghijklmnopqrstuvwxyz';
+        res = [];
+
+        function generateString(length) {
+            let result = '';
+
+            for(let i = 0; i < length; i++) {
+                let number = rand(0, stringas.length - 1);
+                result += stringas[number];
+            }
+
+            return result;
+        }
+
+        function generateStringArray() {
+            const res = [];
+            let counter = 1;
+
+            // return counter;
+            // po komandos return visos likusios eilutes yra nebekompiliuojamos
+
+            for(let i = 0; i < 300; i++) {
+                if (counter > 100) {
+                    return res;
+                }
+
+                const string = generateString( rand(3, 12) );
+                res[res.length] = string;
+
+                if (string.length >= 5) {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+
+        console.log(generateStringArray());
+
+        function showParams(a, b, c = 'Pagal nutylejima') {
+            console.log(a[0], b, c);
+        }
+
+        showParams(['Test'], 'Test', 'Pakeista reiksme pagal nutylejima');
+
+        let array = ['Reiksme', 'Reiksme', 'Reiksme'];
+
+        function push(...values) {
+            for(let i = 0; i < values.length; i++) {
+                array[array.length] = values[i];
+            }
+
+            return array.length;
+        }
+
+        push('Test', 10, [], 50, 'Kitas tekstas');
+        console.log(array);
+
+        // Map metodas ciklams sukti
+
+        // function callbackFn(element, index, array) {
+        //     console.log('Custom map funkcija');
+        // }
+
+        // array.map(callbackFn);
+
+        // Callback'ai
+
+        // let i = 0;
+
+        // function loop() {
+        //     i++;
+
+        //     if(i < 10) {
+        //         loop();
+        //     }
+        //     console.log('Testas');
+        // }
+
+        // loop();
+
+        // function customCallbackFn(element, index, array) {
+        //     console.log('Elementas: ', element, 'Indeksas: ', index, 'Masyvas: ', arr);
+        // }
+
+        // function map(arr, clb) {
+        //     for(let i = 0; i < arr.length; i++) {
+        //         clb(arr[i], i, arr);
+        //     }
+        // }
+
+        // map(array, customCallbackFn);
+
+        // Map metodas perduodant funkcija be pavadinimo
+
+        array.map(function(el) {
+            console.log(el);
+        });
+    
+
+    </script>
+</body>
+
+</html>
