@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        // Arrow function
+
+        const pirmaFunkcija = (a, b, c) => {
+            console.log(a, b, c);
+        }
+
+        // function aprasymas pagal funkcionaluma nera identiskas arrow funkcijai
+
+        pirmaFunkcija(10, 20, 30);
+
+        const array = [10, 20, 30]; 
+
+        array.map((value) => {
+            console.log(value);
+        });
+
+        // norint priimti viena parametra
+
+        array.map(value => {
+            console.log(value);
+        });
+
+        // jeigu atliekamas veiksmas vienos eilutes ilgio
+
+        array.map(value => console.log(value));
+
+        // Naujo masyvo formavimas naudojant map metoda
+
+        const newArray = array.map(value => {
+            return value + 1;
+        });
+
+        // jeigu turime vienos eilutes veiksma return komandos rasyta nera butina
+
+        const addOne = array.map(value => value + 1);
+
+        console.log(addOne);
+
+        // Jeigu parametru priimti nereikia sklausteliai yra vistiek butini
+
+        array.map(() => console.log('Tekstas'));
+
+        // Jeigu norim priimti daugiau nei viena parametra
+
+        array.map((value, index) => console.log(value, index));
+
+        // Filter metodas skirtas atsikratyti reiksmiu, jas isfiltruoti is masyvo
+
+        // const filteredArray = [];
+
+        // for(let i = 0; i < array.length; i++) {
+        //     if(array[i] > 10) {
+        //         filteredArray[filteredArray.length] = array[i];
+        //     }
+        // }
+
+        const filteredArray = array.filter(element => element > 10);
+
+        console.log(filteredArray);
+
+        // Find metodas grazina pirma reiksme atitinkancia kondicija
+
+        const foundElement = array.find(element => element === 30);
+
+        console.log(foundElement);
+
+        const twoLevelArray = [
+            [10, 20, 30],
+            [30, 10, 20],
+            [40, 50, 10]
+        ];
+
+        // jeigu norime susigrazinti pirma masyva kurio elemente esancio masyvo pirmoji reiksme yra 40
+
+        console.log(twoLevelArray.find(element => element[0] === 40));
+
+        // forEach metodas. Skirtingai nei map metodas, forEach metodas nieko negrazina
+
+        array.forEach(element => console.log(element));
+
+        // for of ciklas yra skirtas paimti masyvo arba objekto reiksmes
+
+        const forOfArray = ['Labas', 'Rytas', 'Pasauli'];
+
+        for(const value of forOfArray) {
+            console.log(value);
+        }
+
+        // for in ciklas yra skirtas paimti masyvo reiksmiu indeksa
+
+        for(const index in forOfArray) {
+            console.log(index, forOfArray[index]);
+        }
+    </script> 
+</body>
+</html>
