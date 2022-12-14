@@ -10,7 +10,10 @@
 
 <body>
     <script>
-        // Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų
+        // 1. Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų
+
+        document.write('<h2>1 uzduotis</h2>');
+
 
         function rand(min, max) {
             min = Math.ceil(min);
@@ -37,13 +40,53 @@
                 laimetojas = 'Petras';
             }
 
-            console.log('Kazys:', kazioTaskai, 'Petras:', petroTaskai, 'Partija laimejo:', laimetojas);
+            document.write('Kazys:', kazioTaskai, 'Petras:', petroTaskai, 'Partija laimejo:', laimetojas);
 
             if(kazys >= 222 || petras >= 222) {
-                console.log('Zaidima laimejo:', kazys > petras ? 'Kazys' : 'Petras');
+                document.write('Zaidima laimejo:', kazys > petras ? 'Kazys' : 'Petras');
                 break;
             } 
         }
+
+        // 2. Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+        // a) “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+        // b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+        document.write('<h2>2 uzduoties a salyga</h2>');
+
+        let counter = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let limit = 85;
+
+            while(limit > 0) {
+                limit -= rand(5, 20);
+                counter++;
+            }
+        }
+
+        document.write('Ikalti penkias vinis prireike ' + counter + ' smugiu');
+
+        document.write('<h2>2 uzduoties b salyga</h2>');
+
+        counter = 0;
+
+        for(let i = 0; i < 5; i++) {
+            let limit = 85;
+
+            while(limit > 0) {
+                counter++;
+
+                if (rand(0, 1) === 1) {
+                    console.log('I vini nepataikeme');
+                    continue;
+                }
+
+                limit -= rand(20, 30);
+            }
+        }
+
+        document.write('Ikalti penkias vinis prireike ' + counter + ' smugiu');
 
     </script>
 </body>

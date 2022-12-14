@@ -22,6 +22,8 @@
             document.write('Labas ', name);
         }
 
+        //const printName = name => 'Labas ' + name; //supaprastinta dar labiau sintakse
+
         printName('Greta');
 
         // 2. Sukurkite funkciją  kuri priimtų vieną parametrą (tekstą) ir grąžintų atsakymą kiek simbolių yra tame tekste. Iš funkcijos gautą rezultatą atvaizduokite naršyklėje.
@@ -29,47 +31,50 @@
         document.write('<h2>2 užduotis</h2>');
 
         const symbolCounter = (text) => {
-            document.write('Tekstas turi ', text.length, ' simbolius/simboliu');
+            return 'Tekstas turi ' + text.length + ' simbolius/simboliu';
         }
 
-        symbolCounter('Mano vardas yra Greta');
+        document.write(symbolCounter('Mano vardas yra Greta'));
 
         // 3. Sukurkite funkciją kuri priimtų du parametrus "name" ir "last_name". Funkcija turi grąžinti vieną stringą, kuriame būtų vardas ir pavardė prasidedantys didžiosiomis raidėmis.
 
-        document.write('<h2>3 užduotis</h2>'); //truksta padaryti pirmas raides didziosiomis
+        document.write('<h2>3 užduotis</h2>'); 
         
         const nameAndSurname = (name, last_name) => {
             let fullName = name.charAt(0).toUpperCase() + name.slice(1) + ' ' + last_name.charAt(0).toUpperCase() + last_name.slice(1);
-            document.write(fullName);
+            return fullName;
         }
 
-        nameAndSurname('greta', 'staseliene');
+        document.write(nameAndSurname('greta', 'staseliene'));
 
         // 4. Parašykite funkciją kuri sugeneruotų 3 random skaičius nuo 0 iki 5 ir atspausdintų koncolėje vienoje eilutėje atskirtus kableliais. Po paskutinio skaičiaus kablelio neturi būti.
 
         document.write('<h2>4 užduotis</h2>'); 
+        // 1 variantas su kintamaisiais
+        // const printNumbers = () => {
+        //     let number1 = rand(0, 5);
+        //     let number2 = rand(0, 5);
+        //     let number3 = rand(0, 5);
 
-        const printNumbers = () => {
-            //1 variantas, taciau nenusiima paskutinis kablelis
-            // let i = 0;
-            // let result = '';
+        //     let result = number1 + ',' + number2 + ',' + number3;
+        //     document.write(result);
+        // }
 
-            // while(i < 3) {
-            //     randNum = rand(0, 5);
-            //     i++;
-            //     result = randNum + ',';
-            //     // result = result.slice(0, result.length - 1);
-            //     document.write(result);
-            // }
-            let number1 = rand(0, 5);
-            let number2 = rand(0, 5);
-            let number3 = rand(0, 5);
+        // printNumbers();
 
-            let result = number1 + ',' + number2 + ',' + number3;
-            document.write(result);
+        // 2 variantas dinamiskesnis su ciklu. jeigu noretumem atspausdinti daugiau skaiciu, galime modifikuoti funkcija paduodant parametra 
+
+        function randomNumbers() {
+            const numbers = [];
+
+            for(let i = 0; i < 3; i++) {
+                numbers[numbers.length] = rand(0, 5);
+            }
+
+            document.write(numbers);
         }
 
-        printNumbers();
+        randomNumbers();
 
         /// 5. Parašykite funkciją kuri priimtų tris parametrus "from" ir "to" ir "limit". Patikrinkite ar šie perduodami parametrai yra skaičiai ir pagal juos sugeneruokite masyvą, kurio ilgį nusako "limit" parametras, o reikšmės from ir to nurodo atsitiktinį skaičių šiuose rėžiuose.
 
@@ -78,17 +83,17 @@
         const generateArray = (from, to, limit) => {
 
             if(typeof from === 'number' && typeof to === 'number' && typeof limit === 'number') {
-                console.log(from, to, limit, 'is a number');
-            } else {
-                console.log(from, to, limit, 'is not a number');
-            }
 
             let newArray = [];
 
-            for(i = 0; i < limit; i++) { 
+                for(i = 0; i < limit; i++) { 
                 newArray.push(rand(from, to));
             }
                 return newArray;
+
+            } else {
+                return 'ivestos reiksmes nera skaiciai';
+            }
         }
 
         document.write(generateArray(15, 55, 20));
