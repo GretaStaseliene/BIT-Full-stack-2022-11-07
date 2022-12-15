@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namu darbai</title>
+</head>
+
+<body>
+    <script>
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //---------------------(Masyvai)------------------//
+        document.write('<h1>-------Masyvai-------</h1>');
+
+        // 1. Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+
+        document.write('<h2>1 uzduotis</h2>');
+
+        const array = [];
+
+        for (let i = 0; i < 10; i++) {
+            array[0] = rand(5, 25);
+            array[1] = rand(5, 25);
+            array[2] = array[0] + array[1];
+            array[3] = array[1] + array[2];
+            array[4] = array[2] + array[3];
+            array[5] = array[3] + array[4];
+            array[6] = array[4] + array[5];
+            array[7] = array[5] + array[6];
+            array[8] = array[6] + array[7];
+            array[9] = array[7] + array[8];
+        }
+        document.write(array);
+
+        // 2. Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų. Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z. Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
+
+        document.write('<h2>2 uzduotis console.loge</h2>');
+
+        let string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let array2 = [];
+        
+        for(let i = 0; i < 10; i++) {
+            let random = rand(2, 20);
+            array2[i] = [];
+
+            for(let j = 0; j < random; j++) {
+                let letter = string[rand(0, string.length - 1)];
+
+                array2[i].push(letter); 
+            }
+            array2[i].sort();
+        }
+
+        console.log(array2);
+
+        //--------------------(Funkcijos)----------------//
+        document.write('<h1>-------Funkcijos-------</h1>');
+
+        // 1. Sukurkite funkciją kuri pakeltų paduotą skaičių n laipsniu, ir grąžintų reikšmę (perduodami du parametrai: skaičius ir laipsnis)
+
+        document.write('<h2>1 uzduotis</h2>');
+
+        const task1 = (m, n) => {
+            let result = Math.pow(m, n);
+            return result;
+        }
+
+        document.write(task1(5, 2));
+
+        // 2. Parašykite funkciją, kurios argumentas būtų tekstas, kuris yra įterpiamas į h1 tagą. Rezultatą atvaizduokite naršyklėje.
+
+        document.write('<h2>2 uzduotis</h2>');
+
+        const printText = text => {
+            return '<h1>' + text + '</h1>';
+        }
+
+        document.write(printText('Laba diena, mano vardas - Greta.'));
+
+        // 3. Parašykite funkciją su dviem argumentais, pirmas argumentas tekstas, įterpiamas į h tagą, o antrasis tago numeris (1-6). Rašydami šią funkciją remkitės pirmąjame uždavinyje parašyta funkcija.
+
+        document.write('<h3>3 uzduotis</h2>');
+
+        const printAnotherText = (text, number) => {
+            // if (number === 1) {
+            //     return '<h' + number + '>' + text + '</h' + number + '>';
+            // } else if (number === 2) {
+            //     return '<h' + number + '>' + text + '</h' + number + '>';
+            // } else if (number === 3) {
+            //     return '<h' + number + '>' + text + '</h' + number + '>';
+            // } else if (number === 4) {
+            //     return '<h' + number + '>' + text + '</h' + number + '>';
+            // } else if (number === 5) {
+            //     return '<h' + number + '>' + text + '</h' + number + '>';
+            // } else if (number === 6) {
+            //     return '<h' + number + '>' + text + '</h' + number + '>';
+            // }
+
+            let res = '<h' + number + '>' + text + '</h' + number + '>';
+
+            return res;
+        }
+
+        document.write(printAnotherText('Sveiki visi, čia yra kažkoks tekstas.', 4));
+
+        // 4. Aprašykite funkciją kuri priimtų vieną parametrą "number" bei patikrintų ar duotas skaičius yra pirminis.
+
+        document.write('<h3>4 uzduotis</h2>');
+
+            const primeNums = number => {
+            if ( number === 1) {
+                return 'Skaicius ' + num + ' nera pirminis skaicius';
+            }
+
+            for (let i = 2; i < number; i++){
+                if (number % i == 0){
+                    return 'Skaicius ' + number + ' nera pirminis'
+                } else {
+                    return 'Skaicius ' + number + ' yra pirminis'
+                }
+            }
+        }
+
+        document.write(primeNums(29));
+
+        // 5. Atgal grąžinkite teigiamą arba neigiamą (boolean) atsakymą.
+
+        document.write('<h3>5 uzduotis</h2>');
+
+
+        // 6. Sugeneruokite 100 elementų masyvą kurio reikšmės atsitiktiniai skaičiai nuo 997 iki 15991.
+
+        document.write('<h3>6 uzduotis</h2>');
+
+        const generateArray = () => {
+            const arr = [];
+
+            for(let i = 0; i < 100; i++) {
+                arr[arr.length] = rand(997, 15991);
+            }
+            return arr;
+        }
+
+        document.write(generateArray());
+
+        // 7. Pasinaudodami penktoje užduotyje aprašyta funkcija masyve palikite tik pirminius skaičius, kurie yra didesni nei 5000;
+
+        
+    </script>
+</body>
+
+</html>
