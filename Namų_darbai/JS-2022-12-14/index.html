@@ -111,34 +111,30 @@
 
         document.write(printAnotherText('Sveiki visi, čia yra kažkoks tekstas.', 4));
 
-        // 4. Aprašykite funkciją kuri priimtų vieną parametrą "number" bei patikrintų ar duotas skaičius yra pirminis.
+        // 4. Aprašykite funkciją kuri priimtų vieną parametrą "number" bei patikrintų ar duotas skaičius yra pirminis. 
+        // Atgal grąžinkite teigiamą arba neigiamą (boolean) atsakymą.
 
         document.write('<h3>4 uzduotis</h2>');
 
             const primeNums = number => {
             if ( number === 1) {
-                return 'Skaicius ' + num + ' nera pirminis skaicius';
+                return false;
             }
 
             for (let i = 2; i < number; i++){
                 if (number % i == 0){
-                    return 'Skaicius ' + number + ' nera pirminis'
+                    return false;
                 } else {
-                    return 'Skaicius ' + number + ' yra pirminis'
+                    return true;
                 }
             }
         }
 
-        document.write(primeNums(29));
+        document.write(primeNums(13265));
 
-        // 5. Atgal grąžinkite teigiamą arba neigiamą (boolean) atsakymą.
+        // 5. Sugeneruokite 100 elementų masyvą kurio reikšmės atsitiktiniai skaičiai nuo 997 iki 15991.
 
         document.write('<h3>5 uzduotis</h2>');
-
-
-        // 6. Sugeneruokite 100 elementų masyvą kurio reikšmės atsitiktiniai skaičiai nuo 997 iki 15991.
-
-        document.write('<h3>6 uzduotis</h2>');
 
         const generateArray = () => {
             const arr = [];
@@ -146,13 +142,19 @@
             for(let i = 0; i < 100; i++) {
                 arr[arr.length] = rand(997, 15991);
             }
+        
             return arr;
         }
+        const arr = generateArray();
+        document.write(arr);
 
-        document.write(generateArray());
+        // 6. Pasinaudodami penktoje užduotyje aprašyta funkcija masyve palikite tik pirminius skaičius, kurie yra didesni nei 5000;
 
-        // 7. Pasinaudodami penktoje užduotyje aprašyta funkcija masyve palikite tik pirminius skaičius, kurie yra didesni nei 5000;
+        document.write('<h3>6 uzduotis</h2>');
 
+        const filteredArray = arr.filter(element => primeNums(element) === true);
+
+        console.log(filteredArray);
         
     </script>
 </body>
