@@ -90,20 +90,6 @@
         document.write('<h3>3 uzduotis</h2>');
 
         const printAnotherText = (text, number) => {
-            // if (number === 1) {
-            //     return '<h' + number + '>' + text + '</h' + number + '>';
-            // } else if (number === 2) {
-            //     return '<h' + number + '>' + text + '</h' + number + '>';
-            // } else if (number === 3) {
-            //     return '<h' + number + '>' + text + '</h' + number + '>';
-            // } else if (number === 4) {
-            //     return '<h' + number + '>' + text + '</h' + number + '>';
-            // } else if (number === 5) {
-            //     return '<h' + number + '>' + text + '</h' + number + '>';
-            // } else if (number === 6) {
-            //     return '<h' + number + '>' + text + '</h' + number + '>';
-            // }
-
             let res = '<h' + number + '>' + text + '</h' + number + '>';
 
             return res;
@@ -152,9 +138,9 @@
 
         document.write('<h3>6 uzduotis</h2>');
 
-        const filteredArray = arr.filter(element => primeNums(element) === true);
+        const filteredArray = arr.filter(element => primeNums(element) === true && element > 5000);
 
-        console.log(filteredArray);
+        document.write(filteredArray);
         
     </script>
 </body>
