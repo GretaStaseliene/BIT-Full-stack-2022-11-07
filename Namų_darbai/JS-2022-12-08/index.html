@@ -24,7 +24,7 @@
         let kazys = 0;
         let petras = 0;
 
-        while(true) {
+        while (true) {
             let kazioTaskai = rand(5, 25);
             let petroTaskai = rand(10, 20);
             let laimetojas = '';
@@ -32,9 +32,9 @@
             kazys += kazioTaskai;
             petras += petroTaskai;
 
-            if(kazioTaskai > petroTaskai) {
+            if (kazioTaskai > petroTaskai) {
                 laimetojas = 'Kazys';
-            } else if(kazioTaskai === petroTaskai) {
+            } else if (kazioTaskai === petroTaskai) {
                 laimetojas = 'Ivyko lygiosios';
             } else {
                 laimetojas = 'Petras';
@@ -42,10 +42,10 @@
 
             document.write('Kazys:', kazioTaskai, 'Petras:', petroTaskai, 'Partija laimejo:', laimetojas);
 
-            if(kazys >= 222 || petras >= 222) {
+            if (kazys >= 222 || petras >= 222) {
                 document.write('Zaidima laimejo:', kazys > petras ? 'Kazys' : 'Petras');
                 break;
-            } 
+            }
         }
 
         // 2. Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
@@ -56,10 +56,10 @@
 
         let counter = 0;
 
-        for(let i = 0; i < 5; i++) {
+        for (let i = 0; i < 5; i++) {
             let limit = 85;
 
-            while(limit > 0) {
+            while (limit > 0) {
                 limit -= rand(5, 20);
                 counter++;
             }
@@ -71,10 +71,10 @@
 
         counter = 0;
 
-        for(let i = 0; i < 5; i++) {
+        for (let i = 0; i < 5; i++) {
             let limit = 85;
 
-            while(limit > 0) {
+            while (limit > 0) {
                 counter++;
 
                 if (rand(0, 1) === 1) {
@@ -87,6 +87,28 @@
         }
 
         document.write('Ikalti penkias vinis prireike ' + counter + ' smugiu');
+
+        // 3. Sugeneruokite stringą, kurį sudarytų 50 atsitiktinių skaičių nuo 1 iki 200, atskirtų tarpais. Skaičiai turi būti unikalūs (t.y. nesikartoti). Sugeneruokite antrą stringą, pasinaudodami pirmu, palikdami jame tik pirminius skaičius (t.y tokius, kurie dalinasi be liekanos tik iš 1 ir patys savęs). Skaičius stringe sudėliokite didėjimo tvarka, nuo mažiausio iki didžiausio.
+
+        document.write('<h2>3 uzduotis</h2>');
+
+        let numberArray = [];
+
+        for(let i = 0; i < 50; i++) {
+            numberArray[i] = rand(1, 200);
+
+            for(let j = 0; j < numberArray.length -1; j++) {
+                if(numberArray[i] === numberArray[j]) {
+                    numberArray.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        let numberString = numberArray.join(' ');
+        document.write('Pirmasis stringas: ' + numberString);
+
+        
 
     </script>
 </body>
