@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektai ir DOM</title>
+</head>
+<body>
+    <script>
+        // objekto aprasymo sintakse
+        //galime tureti objekta objekte
+
+        const person = {
+            name: 'Jonas', //Property (savybe)
+            surname: 'Jonaitis',
+            getName: function() {  //Method (metodas)
+                // raktinis zodis this nurodo kreipimasi i objekta kuriame randasi
+                // arrow funkcija savyje neturio raktinio zodzio this
+                return this.name;
+            },
+            setName: function(name) {
+                this.name = name;
+                return 'Naujas vardas: ' + this.name;
+            },
+            likes: ['Begiojimas', 'Sachmatai', 'Apsipirkinejimas']
+        }
+
+        console.log(person.name);
+        console.log(person.surname);
+        console.log(person.likes.join(', '));
+
+        person.name = 'Petras';
+        console.log(person.getName());
+        console.log(person.setName('Adam'));
+        person.name = 'Leonardas';
+
+        console.log(person);
+
+        person.getLikes = function() {
+            return this.likes.join(', ');
+        }
+
+        console.log(person.getLikes());
+        console.log(person);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daugiamačiai masyvai</title>
+</head>
+
+<body>
+    <script>
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // 1. Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.
+
+        document.write('<h2>-----1-----</h2>');
+
+        let array = [];
+
+        for (let i = 0; i < 10; i++) {
+            array[i] = [];
+
+            for (let j = 0; j < 5; j++) {
+                array[i].push(rand(5, 25));
+            }
+        }
+
+        document.write(array);
+
+        // 2. Naudodamiesi 1 uždavinio masyvu:
+        // a) Suskaičiuokite kiek masyve yra elementų didesnių už 10;
+        document.write('<h2>-----2 a) -----</h2>');
+
+        let counter = 0;
+        let max = 0;
+
+        for (const lvl1 in array) {
+            for (const lvl2 in array[lvl1]) {
+                if (array[lvl1][lvl2] > 10) {
+                    counter++;
+                }
+
+                if (array[lvl1][lvl2] >= max) {
+                    max = array[lvl1][lvl2];
+                }
+            }
+        }
+
+        document.write('Reiksmiu didesniu uz 10 yra: ', counter);
+
+        // b) Raskite didžiausio elemento reikšmę;
+        document.write('<h2>-----2 b)------</h2>');
+
+        // const max = Math.max(...[].concat(...array));
+
+        document.write('Didziausia reiksme masyvuose: ', max);
+
+        // c) Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
+        document.write('<h2>-----2 c)------</h2>');
+
+        let sum0 = 0;
+        let sum1 = 0;
+        let sum2 = 0;
+        let sum3 = 0;
+        let sum4 = 0;
+
+        for (let i = 0; i < array.length; i++) {
+            sum0 += array[i][0];
+
+            sum1 += array[i][1];
+
+            sum2 += array[i][2];
+
+            sum3 += array[i][3];
+
+            sum4 += array[i][4];
+        }
+
+        document.write('Nuliniu indeksu reiksmiu suma: ', sum0, '<br>');
+        document.write('Vienetu indeksu reiksmiu suma: ', sum1, '<br>');
+        document.write('Dvejetu indeksu reiksmiu suma: ', sum2, '<br>');
+        document.write('Trejetu indeksu reiksmiu suma: ', sum3, '<br>');
+        document.write('Ketvertu indeksu reiksmiu suma: ', sum4, '<br>');
+
+        // d) Visus antro lygio masyvus “pailginkite” iki 7 elementų
+        document.write('<h2>-----2 d)------</h2>');
+
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                while (array[i].length < 7) {
+                    array[i].push(rand(26, 50));
+                }
+            }
+        }
+
+        console.log(array);
+        document.write('papildytas masyvas consol loge');
+
+
+        // e) Suskaičiuokite kiekvieno iš antro lygio masyvų elementų sumą atskirai ir sumas panaudokite kaip reikšmes sukuriant naują masyvą. T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, turinčio indeksą 0 dideliame masyve, visų elementų sumai.
+        document.write('<h2>-----2 e)------</h2>');
+
+        let newArray = [];
+        let sum = 0;
+
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[j].length; j++) {
+                sum += array[i][j];
+            }
+            newArray.push(sum);
+            sum = 0;
+        }
+
+        document.write('naujas masyvas: ', newArray);
+
+        // 3. Sukurkite masyvą iš 10 elementų. Masyvo reikšmes užpildykite pagal taisyklę: generuokite skaičių nuo 0 iki 5. Ir sukurkite tokio ilgio masyvą. Jeigu reikšmė yra 0 masyvo nekurkite. Antro lygio masyvo reikšmes papildykite atsitiktiniais skaičiais nuo 0 iki 10. Ten kur masyvo nėra įkelkite skaičių nuo 0 iki 10.
+        document.write('<h2>-----3------</h2>');
+       
+        // kodel kai random skaicius lygus 0 man vistiek generuoja masyva, taciau tuscia?
+        document.write('rezultatas consol loge');
+        let arr = [];
+
+        for (let i = 0; i < 10; i++) {
+            arr[i] = [];
+
+            let arrayLength = rand(0, 5);
+
+            if (arrayLength === 0) {
+                array[i] = rand(1, 10);
+            }
+
+            for (let j = 0; j < arrayLength; j++) {
+                if (arrayLength > 0) {
+                    arr[i].push(rand(1, 10));
+                }
+            }
+        }
+        console.log(arr);
+
+        // 4. Paskaičiuokite 3 uždavinio masyvo visų reikšmių sumą ir išrūšiuokite masyvą taip, kad pirmiausiai eitų mažiausios masyvo reikšmės arba jeigu reikšmė yra masyvas, to masyvo reikšmių sumos.
+
+    </script>
+</body>
+
+</html>

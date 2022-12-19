@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Statiskai priskirtas turinys</h1>
+    </div>
+    <script>
+        // DOM - Document Object Model
+        // DOM Manipuliacija
+
+        //document.write('<h1>Test</h1>');
+
+        // getElementById() metodas suranda elementa pagal id
+        // innerHTML savybe leidzia prideti html turini i elementa
+        document.getElementById('app').innerHTML += '<h2>Dinamiskai integruotas turinys</h2>';
+        document.getElementById('app').innerHTML += '<h3>Dinamiskai integruota antra eilute</h3>';
+
+        // innerText savybe skirta priskirti teksta, HTML turinys negeneruojamas
+        document.getElementById('app').innerText = '<h1>Naudojames innerText savybe</h1>';
+
+        //textContent greiciau veikianti alternatyva tekstinio turinio priskyrimui
+        document.getElementById('app').textContent = '<h1>Naudojames textCintent savybe</h1>';
+
+        document.getElementById('app').innerHTML = '<div class="box"></div>';
+
+        document.getElementById('app').querySelector('.box').textContent = 'Labas';
+
+        // querySelector metodas leidzia ieskoti elementu naudojantis css sintakses krepimusi
+        document.querySelector('#app .box').textContent = 'Sudie';
+
+        //Panaikiname visa turini body elemente
+        document.querySelector('body').innerHTML = '';
+
+    </script>
+</body>
+</html>

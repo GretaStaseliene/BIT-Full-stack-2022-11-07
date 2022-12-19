@@ -24,6 +24,7 @@
 
         document.write('<h2>1 uzduotis</h2>');
 
+        //stattinis variantas
         const array = [];
 
         for (let i = 0; i < 10; i++) {
@@ -38,7 +39,17 @@
             array[8] = array[6] + array[7];
             array[9] = array[7] + array[8];
         }
-        document.write(array);
+
+        //dinaminis variantas
+        const masyvas = [rand(5, 25), rand(5, 25)];
+
+        for(let i = 2; i < 10; i++) {
+            const res = masyvas[i - 2] + masyvas[i - 1];
+            masyvas.push(res);
+        }
+
+        document.write('dinamiskas variantas', masyvas, '<br>');
+        document.write('statitinsi variantas', array);
 
         // 2. Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų. Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z. Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
 
