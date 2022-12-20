@@ -24,15 +24,33 @@
     <ol>
         <li>Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus (Jonas Jonaitis). Atspausdinti trumpesnį stringą.
         </li>
+        <div class="variantai"></div>
+        <button onclick="pirmaUzduotis()">Spauskite noredami pamatyti pirmos uzduoties atsakyma</button>
+        <div class="ats"></div>
+
         <li>Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį :
             "Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
         </li>
+        <button onclick="antraUzduotis()">Spauskite noredami pamatyti antros uzduoties atsakyma</button>
+        <div class="ats2"></div>
+
         <li>Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
         </li>
+        <button onclick="treciaUzduotis()">Spauskite noredami pamatyti trecios uzduoties atsakyma</button>
+        <div class="variantai3"></div>
+        <div class="ats3"></div>
+
         <li>Sukurti kintamąjį su stringu: “Once upon a time in hollywood”. Jame visas “o” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  Rezultatą atspausdinti.</li>
+        <button onclick="ketvirtaUzduotis()">Spauskite noredami pamatyti ketvirtos uzduoties atsakyma</button>
+        <div class="variantai4"></div>
+        <div class="ats4"></div>
+
         <li>Sukurkite keturis kintamuosius kuriems sugeneruokite atsitiktines reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų.</li>
+        <button onclick="penktaUzduotis()">Spauskite noredami pamatyti penktos uzduoties atsakyma</button>
+        <div class="variantai5"></div>
+        <div class="ats5"></div>
+
     </ol>
-    <p><b>Rezultatą tikrinti: consolėje</b></p>
 
     <script>
 
@@ -43,16 +61,21 @@
             }
 
         // 1 užduotis
+        function pirmaUzduotis() {
         let firstActor = 'Tom Cruise';
         let secondActor = 'Tom Holland';
 
+        document.querySelector('.variantai').innerHTML = `<p>Pirmasis aktorius - ${firstActor}</p><p>Antrasis aktorius - ${secondActor}</p>`;
+
         if(firstActor.length > secondActor.length) {
-            console.log(secondActor);
+            document.querySelector('.ats').textContent = secondActor;
         } else {
-            console.log(firstActor);
+            document.querySelector('.ats').textContent = firstActor;
         }
+    }
 
         // 2 užduotis
+        function antraUzduotis() {
         let name = 'Greta';
         let surname = 'Stašelienė';
         let yearOfBirth = 1994;
@@ -60,22 +83,32 @@
 
         let myAge = currentYear - yearOfBirth;
 
-        console.log('Aš esu', name, surname + '. Man yra', myAge, 'metai');
+        document.querySelector('.ats2').textContent = `Aš esu ${name} ${surname}. Man yra ${myAge} metai`;
+        }
 
         // 3 užduotis
+        function treciaUzduotis() {
         let actress1 = 'Jessica Alba';
         let actress2 = 'Cameron Diaz';
 
         let newString = actress1[4] + actress1[5] + actress1[6] + actress1[9] + actress1[10] + actress1[11] + actress2[4] + actress2[5] + actress2[6] + actress2[9] + actress2[10] + actress2[11];
 
-        console.log(newString);
+        document.querySelector('.variantai3').innerHTML = `<p>Pirmoji aktore - ${actress1}</p><p>Antroji aktore - ${actress2}</p> `;
+        document.querySelector('.ats3').textContent = `Atsakymas - ${newString}`;
+        }
 
         // 4 užduotis 
+        function ketvirtaUzduotis() {
         let sentence = 'Once upon a time in hollywood';
 
-        console.log(sentence.replaceAll('o', '*').replaceAll('O', '*'));
+        let newSentence = sentence.replaceAll('o', '*').replaceAll('O', '*');
+
+        document.querySelector('.variantai4').textContent = `Originalus stringas: ${sentence}`;
+        document.querySelector('.ats4').textContent = `Upgradint'as stringas: ${newSentence}`;
+        }
 
         // 5 užduotis
+        function penktaUzduotis(){
         let random1 = rand(0, 2);
         let random2 = rand(0, 2);
         let random3 = rand(0, 2);
@@ -134,9 +167,9 @@
             twos++;
         }
 
-        console.log('Gauti skaiciai:', random1, random2, random3, random4);
-        console.log('Gauti rezultatai:', zeros, ones, twos);
-
+        document.querySelector('.variantai5').textContent = `Gauti skaiciai: ${random1}, ${random2}, ${random3}, ${random4}`;
+        document.querySelector('.ats5').textContent = `Gauti rezultatai: nuliu: ${zeros}, vienetu: ${ones}, dvejetu: ${twos}`;
+    }
     </script>
 </body>
 </html>
