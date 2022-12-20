@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipuliacija</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        img {
+            width: 60px;
+            border: 4px solid rgb(176, 15, 15);
+            border-radius: 10px;
+            margin: 20px auto 0 auto;
+        }
+        body {
+            background-color: rgb(175, 201, 235);
+        }
+        .card {
+            max-width: 300px;
+            /* max-height: 500px; */
+            background-color: rgb(240, 230, 230);
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        .header {
+            background-color: red;
+            border-radius: 10px 10px 0 0;
+        }
+        .image, .name, .speciality {
+            display: block;
+            text-align: center;
+        }
+        .header-info {
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            padding: 5px;
+        }
+        .name {
+            font-size: 26px;
+            letter-spacing: 2px;
+        }
+        .speciality {
+            font-size: 14px;
+            margin: -20px auto 10px auto;
+            letter-spacing: 1px;
+        }
+        .socials {
+            display: flex;
+            justify-content: center;
+        }
+        .socials i {
+            color: white;
+            font-size: 24px;
+            display: block;
+            text-align: center;
+            margin-top: 6px;
+        }
+        .facebook, .whatsapp, .twitter, .instagram {
+            width: 60px;
+            height:50px;
+            background-color: red;
+            margin: 0 5px 10px;
+            border-radius: 5px;
+        }
+        ul li {
+            height: 50px;
+            padding-top: 5px;
+        }
+        ul span {
+            font-size: 12px;
+            padding-top: -5px;
+        }
+        ul li p {
+            font-size: 12px;
+            margin-left: 30px;
+        }
+        li i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="profile">
+            <div class="header">
+                <div class="image">
+                </div>
+                <div class="header-info">
+                    <p class="name"></p>
+                    <p class="speciality"></p>
+                </div>
+            </div>
+            <div class="main-info">
+                <ul class="list-group p-2">
+                    <li class="list-group-item text-danger mb-1 rounded pt-0"><i class="bi bi-telephone"></i><span>Phone</span>
+                        <p class="phone text-body"></p>
+                    </li>
+                    <li class="list-group-item text-danger mb-1 rounded pt-0"><i class="bi bi-envelope-fill"></i><span>Email Address</span>
+                        <p class="email text-body"></p>
+                    </li>
+                    <li class="list-group-item text-danger mb-1 rounded pt-0"><i class="bi bi-globe"></i><span>Website</span>
+                        <p class="web text-body"></p>
+                    </li>
+                    <li class="list-group-item text-danger mb-1 rounded pt-0"><i class="bi bi-geo-alt-fill"></i><span>City</span>
+                        <p class="city text-body"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="socials">
+                <div class="facebook">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+                <div class="whatsapp">
+                    <a href="#"><i class="bi bi-whatsapp"></i></a>
+                </div>
+                <div class="twitter">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                </div>
+                <div class="instagram">
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const personInfo = {
+            name: 'Amine Jafur',
+            specialty: 'Full Stack Developer',
+            phone: +37062578324,
+            email: 'amin.jafur@gmail.com',
+            web: 'codepen.io/aminejaf',
+            city: 'Casablanca, Marocco',
+            image: 'profile-picture.jpg'
+        }
+
+        document.querySelector('.image').innerHTML = `<img src="${personInfo.image}" alt="profile picture">`;
+        document.querySelector('.name').textContent = personInfo.name;
+        document.querySelector('.speciality').textContent = personInfo.specialty;
+        document.querySelector('.phone').textContent = personInfo.phone;
+        document.querySelector('.email').textContent = personInfo.email;
+        document.querySelector('.web').textContent = personInfo.web;
+        document.querySelector('.city').textContent = personInfo.city;
+        
+    </script>
+</body>
+
+</html>
