@@ -12,6 +12,7 @@
         /* [name="picture"] {
             background-color: red;
         } */
+        
     </style>
 
 </head>
@@ -56,6 +57,9 @@
     </div>
 
     <script>
+        const addLabel = 'Prideti';
+        const editLabel = 'Redaguoti';
+
         const data = [
             {
                 pavadinimas: 'Treniruoklis',
@@ -104,7 +108,8 @@
                         <td>${product.sandelis}</td>
                         <td>${product.kaina * product.kiekis}</td>
                         <td>
-                            <button onclick="deleteItem(${index})">Trinti</button>
+                            <button onclick="deleteItem(${index})" class="btn btn-danger">Trinti</button>
+                            <button onclick="editItem(${index})" class="btn btn-primary">Atnaujinti</button>
                         </td>
                     </tr>
                 `;
@@ -121,6 +126,17 @@
             showResults();
         }
 
+        const editItem = (index) => {
+            //document.querySelector('form').setAttribute('data-edit', index);
+            document.querySelector('form').dataset.edit = index;
+            document.querySelector('form button').textContent = editLabel;
+            document.querySelector('[name="picture"]').value = data[index].nuotrauka;
+            document.querySelector('[name="name"]').value = data[index].pavadinimas;
+            document.querySelector('[name="qty"]').value = data[index].kiekis;
+            document.querySelector('[name="price"]').value = data[index].kaina;
+            document.querySelector('[name="location"]').value = data[index].sandelis;
+        }
+
         const addResult = (event) => {
             event.preventDefault();
 
@@ -132,7 +148,16 @@
                 sandelis: document.querySelector('[name="location"]').value
             }
 
-            data[data.length] = product;
+            const index = document.querySelector('form').dataset.edit;
+
+            data[index ? index : data.length] = product;
+
+            delete document.querySelector('form').dataset.edit;
+
+            document.querySelector('form button').textContent = addLabel;
+
+            //formos laukeliu resetinimas
+            //document.querySelector('form').reset();
 
             showResults();
 
