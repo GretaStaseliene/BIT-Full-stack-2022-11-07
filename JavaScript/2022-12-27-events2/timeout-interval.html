@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout and setIntervals</title>
+</head>
+<body>
+    <script>
+        // setTimeout funkcija aktyvuojama viena karta
+        setTimeout(() => {
+            console.log('veiksmas ivyko po 3 sekundziu');
+        }, 3000);
+
+        //setInterval funkcija aktyvuojama vis is naujo pagal nurodyta laiko tarpa
+        setInterval(() => {
+            console.log('veiksmas kartojasi kas tris sekundes');
+        }, 3000);
+    </script>
+</body>
+</html>
