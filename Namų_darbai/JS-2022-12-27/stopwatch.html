@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<body>
+    <div class="timer">
+        <span id="minutes">00 :</span>
+        <span id="seconds">00 :</span>
+        <span id="miliseconds">00</span>
+    </div>
+    <div class="buttons">
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+        <button id="reset">reset</button>
+    </div>
+    <script>
+        let minutes = seconds = miliseconds = 0;
+        let integer = null;
+
+        const timer = () => {
+
+            miliseconds++;
+
+            if(miliseconds == 100) {
+                miliseconds = 0;
+                seconds ++;
+            }
+            if(seconds == 60) {
+                seconds = 0;
+                minutes ++;
+            }
+
+            if(miliseconds < 10) {
+                document.getElementById('miliseconds').textContent = '0' + miliseconds;
+            } else {
+                document.getElementById('miliseconds').textContent = miliseconds;
+            }
+            if(seconds < 10) {
+                document.getElementById('seconds').textContent = '0' + seconds;
+            } else {
+                document.getElementById('seconds').textContent = seconds;
+            }
+            if(minutes < 10) {
+                document.getElementById('minutes').textContent = '0' + minutes;
+            } else {
+                document.getElementById('minutes').textContent = minutes;
+            }
+        }
+
+        document.getElementById('start').addEventListener('click', () => {
+            if(integer !== null) {
+                clearInterval(integer);
+            }
+
+            integer = setInterval(timer, 10);
+        });
+
+        document.getElementById('stop').addEventListener('click', () => {
+            clearInterval(integer);
+        });
+
+        document.getElementById('reset').addEventListener('click', () => {
+            miliseconds = seconds = minutes;
+
+            clearInterval(integer);
+
+            document.getElementById('miliseconds').textContent = '00';
+            document.getElementById('seconds').textContent = '00 :';
+            document.getElementById('minutes').textContent = '00 :';
+        });
+
+    </script>
+</body>
+</html>
