@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+
+<div id="app"></div>
+<button onclick="getPhoto()">Nauja nuotrauka</button>
+
+<body>
+    <script>
+        // JSON informacija visuomet bus stringo formatas
+        const jsonData = [
+            {
+                pavadinimas: 'Treniruoklis',
+                kiekis: 2,
+                kaina: 199.99,
+                sandelis: 'Kaunas',
+                nuotrauka: 'https://picsum.photos/50/50?random=1'
+            },
+            {
+                pavadinimas: 'Kasos aparatas',
+                kiekis: 4,
+                kaina: 175.45,
+                sandelis: 'Vilnius',
+                nuotrauka: 'https://picsum.photos/50/50?random=2'
+            },
+            {
+                pavadinimas: 'Dviratis',
+                kiekis: 3,
+                kaina: 159.58,
+                sandelis: 'Klaipeda',
+                nuotrauka: 'https://picsum.photos/50/50?random=3'
+            }
+        ];
+
+        // JSON.parse() - JSON duomenu issifravimas
+        // JSON.stringify() - JSON duomenu uzsifravimas
+        
+        //const encodeString = JSON.stringify(jsonData)
+
+        //console.log(encodeString);
+
+        //const data = JSON.parse(encodeString);
+
+        //console.log(data);
+
+        // CRUD
+        // C - Create - POST method
+        // R - Read - GET method
+        // U - Update - PUT method
+        // D - Delete - DELETE method
+
+
+        // Isoriniu duomenu paemimui skirta funkcija
+        // fetch('https://appbeats.themetags.com/')
+        // .then(resp => resp.text())
+        // .then(resp => {
+        //     document.getElementById('app').innerHTML = resp;
+        // });
+
+
+        // Atsitiktines kates nuotraukos paemimas naudojantis API:
+
+        // console.log('pries paleidima');
+
+        // fetch('https://api.thecatapi.com/v1/images/search') // 1s
+        // .then(resp => resp.json()) // json() metodas automatiskai iskonvertuoja json string
+        // .then(resp => { 
+        //     console.log('paleidimas baigtas');
+        //     document.getElementById('app').innerHTML = `<img src=${resp[0].url}>`;
+        // });
+
+        // console.log('po paleidimo');
+
+        const getPhoto = () => {
+            fetch('https://api.thecatapi.com/v1/images/search')
+            .then(resp => resp.json())
+            .then(resp => { 
+                document.getElementById('app').innerHTML = `<img src=${resp[0].url}>`;
+            });
+        }
+
+        getPhoto();
+    </script>
+</body>
+
+</html>
