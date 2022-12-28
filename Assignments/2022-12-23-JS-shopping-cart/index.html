@@ -98,13 +98,22 @@
         }
 
         const deleteItem = (index) => {
-            delete data[index];
-
+            data.splice(index);
+            if(data.length === 0) {
+                document.querySelector(".msg").textContent = 'Jūsų krepšelis yra tuščias';
+                document.querySelector(".msg").style.display = 'block';
+            }
             showResult();
         }
 
         const addResult = (event) => {
             event.preventDefault();
+
+            if(document.querySelector('[name="item"]').value === '' || document.querySelector('[name="qty"]').value === '') {
+                document.querySelector(".msg").textContent = 'Neįvestas pavadinimas arba kiekis';
+                document.querySelector(".msg").style.display = 'block';
+                return;
+            }
 
             const product = {
                 item: document.querySelector('[name="item"]').value,
@@ -117,7 +126,7 @@
 
             if (data.length > 0) {
                 document.querySelector(".msg").style = "display:none";
-        }
+            }
 
             showResult();
         }
