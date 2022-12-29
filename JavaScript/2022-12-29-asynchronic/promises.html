@@ -79,7 +79,7 @@
 
         const getData = async () => {
             try {
-                const atsakymas = await fetch('https://gog.ceo/api/breeds/image/random');
+                const atsakymas = await fetch('https://dog.ceo/api/breeds/image/random');
                 const atsakymoObjektas = await atsakymas.json();
 
                 console.log(atsakymoObjektas.message);
