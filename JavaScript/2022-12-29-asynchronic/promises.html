@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<body>
+
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // const fetch = (url) => new Promise((ivykdyta, neivykdyta) => {
+        //     let tikimybe = rand(0, 1);
+
+        //     setTimeout(() => {
+        //         if (tikimybe === 1) {
+        //             ivykdyta('pazadas yra ivykdytas');
+        //         } else {
+        //             neivykdyta('uzklausa nepavyko');
+        //         }
+        //     }, 2000);
+        // })
+
+        // fetch('https://google.com')
+        // .then(atsakymas => console.log(atsakymas))
+        // .catch(klaida => console.log(klaida));
+
+        // Galimybe daryti palaukimus stabdant asinhroniskuma yra turint dvi sitaucijas:
+        // Modulis
+        // Asinchronine funkcija
+
+        const fetch = (url) => new Promise((ivykdyta, neivykdyta) => {
+            let tikimybe = rand(0, 1);
+
+            setTimeout(() => {
+                if (tikimybe === 1) {
+                    ivykdyta('pazadas yra ivykdytas');
+                } else {
+                    neivykdyta('uzklausa nepavyko');
+                }
+            }, 2000);
+        })
+
+        console.log('kodo pradzia');
+
+        // fetch('https://google.com')
+        // .then(atsakymas => console.log(atsakymas))
+        // .catch(klaida => console.log(klaida));
+
+        // Asinchronines funkcijos aprasymas arrow formatu
+        //const info = async () => {}
+
+        // Asinchronines funkcijos aprasymas klasikiniu formatu
+        // async function info () {
+        // }
+
+        // const informacija = async () => {
+
+        //     try {
+        //         const atsakymas = await fetch('https://google.com');
+
+        //         console.log(atsakymas);
+
+        //         console.log('kodo pabaiga');
+        //     } catch(klaida) {
+        //         console.log(klaida);
+        //     }
+        // }
+
+        // informacija();
+
+        const getData = async () => {
+            try {
+                const atsakymas = await fetch('https://gog.ceo/api/breeds/image/random');
+                const atsakymoObjektas = await atsakymas.json();
+
+                console.log(atsakymoObjektas.message);
+            } catch(klaida) {
+                console.log(klaida);
+            }
+
+            console.log('finally done');
+        }
+        getData();
+    </script>
+</body>
+
+</html>
