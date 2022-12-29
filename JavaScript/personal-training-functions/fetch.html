@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Norint gauti veiklos pasiulyma - spauskite mygtuka zemiau</h2>
+    <div class="activity">
+        <ul>
+            <li id="activity"></li>
+            <li id="type"></li>
+            <li id="participants"></li>
+            <li id="price"></li>
+            <li id="link"></li>
+            <li id="key"></li>
+            <li id="accessibility"></li>
+        </ul>
+    </div>
+    <button onclick="getSuggestion()">Gauti</button>
+    <script>
+        const getSuggestion = () => {
+            fetch('https://www.boredapi.com/api/activity')
+            .then(resp => resp.json())
+            .then(resp => {
+                document.getElementById('activity').textContent = `Veikla: ${resp.activity}`;
+                document.getElementById('type').textContent = `Veiklos tipas: ${resp.type}`;
+                document.getElementById('participants').textContent = `Siai veiklai reikes: ${resp.participants} zmoniu/zmogaus`;
+                document.getElementById('price').textContent = `Uzsiemimo kaina: ${resp.price}`;
+                document.getElementById('link').textContent = `Nuoroda: ${resp.link}`;
+                document.getElementById('key').textContent = `Veiklos kodas: ${resp.key}`;
+                document.getElementById('accessibility').textContent = `Prieinamumas: ${resp.accessibility}`;
+            })
+        }
+    </script>
+</body>
+</html>
