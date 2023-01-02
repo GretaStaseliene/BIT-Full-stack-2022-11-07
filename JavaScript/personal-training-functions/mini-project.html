@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My mini prject</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 800px;
+        }
+
+        .product h6 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script>
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '23ea6d7d5fmshb6b2fff07628571p1a7520jsn544828065af8',
+                'X-RapidAPI-Host': 'makeup.p.rapidapi.com'
+            }
+        };
+
+        fetch('https://makeup.p.rapidapi.com/products.json?brand=maybelline', options)
+            .then(response => response.json())
+            .then(response => {
+
+                let result = '<div class="row products">';
+
+                response.map(res => {
+                    console.log(res);
+
+                    result += `
+                        <div class="product col-4">
+                            <a href="https://makeup.p.rapidapi.com/products.json?brand=maybelline?${res.product_link}" onclick="showProduct(event)">
+                                <img src="${res.api_featured_image}" alt="${res.name}">
+                            </a>
+                            <h6>${res.name}</h6>
+                        </div>
+                    `;
+                });
+
+                result += '</div>';
+
+                document.querySelector('.container').innerHTML = result;
+            });
+
+        const showProduct = (event) => {
+            event.preventDefault();
+
+            fetch('https://makeup.p.rapidapi.com/products.json?brand=maybelline', options)
+                .then(response => response.json())
+                .then(response => {
+
+                    let result = '';
+
+                    response.map(res => {
+                     result += `
+                            <div class="single-product">
+                                <div class="row">
+                                    <div class="product-picture col-5">
+                                        <img src="${res.api_featured_image}" alt="${res.name}">
+                                    </div>
+                                    <div class="product-info col-7">
+                                        <h6>${res.name}</h6>
+                                        <p>${res.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                `;
+                    });
+
+                    document.querySelector('.container').innerHTML = result;
+                });
+        }
+
+    </script>
+</body>
+
+</html>
