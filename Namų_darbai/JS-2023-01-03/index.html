@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namu darbai 2023-01-03</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f9f9f9;
+            font-family: Ubuntu,sans-serif;
+            transition: all .25s ease-in-out;
+            position: relative;
+            left: 0;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .card {
+            position: relative;
+            padding: 20px 0;
+            width: 100%;
+            background: #fff;
+            border-radius: 3px;
+            box-shadow: 0 0 1px rgb(0 0 0 / 50%);
+            overflow: hidden;
+            text-align: center;
+            z-index: 5;
+        }
+        .card:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            background: #f9f9f9;
+            border-bottom: 1px solid rgba(0,0,0,.15);
+            z-index: -1;
+        }
+        .person-picture img {
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,.25);;
+            padding: 4px;
+        }
+        .button {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            list-style-type: none;
+            /* margin: 0; */
+            /* padding: 0; */
+            /* overflow: hidden; */
+            float: left;
+        }
+        .button li {
+            cursor: pointer;
+            display: block;
+            width: 40px;
+            height: 48px;
+            float: left;
+            margin: 20px;
+            background-image: url(card_icons.png);
+            background-size: 378px;
+            transition: all .25s ease-out;
+        }
+        #data-title {
+            color: #999;
+            font-size: 18px;
+        }
+        #data-value {
+            color: #2c2e31;
+            font-size: 28px;
+            margin: 5px;
+        }
+        #email {
+            background-position-x: -66.5px;
+        }
+        #birth-date {
+            background-position-x: -133px;
+        }
+        #address {
+            background-position-x: -200px;
+        }
+        #phone {
+            background-position-x: -267px;
+        }
+        #password {
+            background-position-x: -334px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="person-picture"></div>
+            <div class="person-info">
+                <p id="data-title"></p>
+                <h2 id="data-value"></h2>
+            </div>
+            <div class="buttons">
+                <ul class="button">
+                    <li id="name" onmouseenter="printName()"></li>
+                    <li id="email" onmouseenter="printEmail()"></li>
+                    <li id="birth-date" onmouseenter="printBirthDate()"></li>
+                    <li id="address" onmouseenter="printAddress()"></li>
+                    <li id="phone" onmouseenter="printPhone()"></li>
+                    <li id="password" onmouseenter="printPassword()"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>      
+        fetch('https://randomuser.me/api/')
+            .then(resp => resp.json())
+            .then(resp => {
+    
+                let data = resp.results[0];
+                console.log(data);
+
+                document.querySelector('.person-picture').innerHTML = `<img src="${data.picture.large}">`;
+                
+                name = data.name.first + ' ' + data.name.last;
+                email = data.email;
+                birth = new Date(data.dob.date);
+                address = data.location.street.number + ' ' + data.location.street.name;
+                phone = data.phone;
+                password = data.login.password;
+
+            });
+
+            const printName = () => {
+                document.getElementById('data-title').textContent = 'Hi, My name is';
+                document.getElementById('data-value').textContent = name;
+                document.getElementById('name').setAttribute("status", "active");
+            }
+
+            const printEmail = () => {
+                document.getElementById('data-title').textContent = 'My email address is';
+                document.getElementById('data-value').textContent = email;
+                document.getElementById('email').setAttribute("status", "active");
+            }
+
+            const printBirthDate = () => {
+                document.getElementById('data-title').textContent = 'My birthday is';
+                document.getElementById('data-value').textContent = birth.toLocaleString();
+                document.getElementById('name').setAttribute("status", "birth-date");
+            }
+
+            const printAddress = () => {
+                document.getElementById('data-title').textContent = 'My address is';
+                document.getElementById('data-value').textContent = address;
+                document.getElementById('name').setAttribute("status", "address");
+            }
+
+            const printPhone = () => {
+                document.getElementById('data-title').textContent = 'My phone number is';
+                document.getElementById('data-value').textContent = phone;
+                document.getElementById('name').setAttribute("status", "phone");
+            }
+
+            const printPassword = () => {
+                document.getElementById('data-title').textContent = 'My password is';
+                document.getElementById('data-value').textContent = password;
+                document.getElementById('name').setAttribute("status", "password");
+            }
+    </script>
+</body>
+
+</html>
