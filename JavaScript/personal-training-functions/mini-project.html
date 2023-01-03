@@ -41,7 +41,7 @@
 
                     result += `
                         <div class="product col-4">
-                            <a href="https://makeup.p.rapidapi.com/products.json?brand=maybelline?${res.product_link}" onclick="showProduct(event)">
+                            <a href="#" onclick="showProduct(${res.id})">
                                 <img src="${res.api_featured_image}" alt="${res.name}">
                             </a>
                             <h6>${res.name}</h6>
@@ -54,12 +54,12 @@
                 document.querySelector('.container').innerHTML = result;
             });
 
-        const showProduct = (event) => {
-            event.preventDefault();
+        const showProduct = (id) => {
 
             fetch('https://makeup.p.rapidapi.com/products.json?brand=maybelline', options)
                 .then(response => response.json())
                 .then(response => {
+
 
                     let result = '';
 
