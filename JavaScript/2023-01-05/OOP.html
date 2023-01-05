@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektinis programavimas</title>
+</head>
+
+<body>
+    <script>
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Inkapsuliacija
+
+        class Automobiliai {
+            durys = 15;
+            static veidrodeliai = 3;
+
+            constructor(vairas, langas) {
+                // Savybes (properties) priskiriamos su raktiniu zodziu this 
+                this.vairas = vairas;
+                this.langas = langas;
+            }
+
+            // Funkcija patalpinta klaseje yra vadinama metodu
+            ratai() {
+                return 'Masina turi keturis ratus';
+            }
+
+            getVairas() {
+                return 'Vairas automobilyje yra: ' + this.vairas;
+            }
+
+            setVairas(kiekis) {
+                this.vairas = kiekis;
+                return this;
+            }
+
+            setProperties(vairas, langas) {
+                this.vairas = vairas;
+                this.window = langas;
+
+                return this;
+            }
+
+            kedes(number) {
+                this.kedes = [];
+
+                for(let i = 1; i <= number; i++) {
+                    this.kedes.push('Kede ' + i); 
+                }
+                return this;
+            }
+
+        }
+
+        // Instancija yra objektas grazinamas po klases issaukimo (instance)
+        const auto = new Automobiliai(1, 6);
+
+        console.log(auto);
+
+        console.log(auto.setVairas(10).getVairas());
+
+        console.log(auto.setProperties(25, 48));
+
+        console.log(auto.kedes(4));
+
+        for(let i = 1; i <= 10; i++) {
+            const car = new Automobiliai(rand(0, 5), rand(0, 8));
+
+            console.log(car);
+        }
+
+        console.log(Automobiliai.veidrodeliai);
+
+        class StatineKlase {
+            static operation = 'add';
+
+            static math(a, b) {
+                return a + b;
+            }
+
+            static url = 'https://api.google.com/';
+        }
+
+        StatineKlase.operation = 'divide';
+
+        console.log(StatineKlase.operation);
+        console.log(StatineKlase.math(5, 3));
+
+        console.log(StatineKlase.url);
+
+
+        class Traktoriai extends Automobiliai {
+            ratuDydis = 250;
+            constructor() {
+                // super komanda nurodo kreipimasi i tevine klase kuria norime praplesti
+                super(10, 20);
+
+                delete this.vairas;
+            }
+        }
+
+        const traktoriai = new Traktoriai();
+        console.log(traktoriai.kedes(5));
+        console.log(new Automobiliai(5, 20));
+
+        class Salonas {
+            automobiliai = [];
+
+            constructor() {
+                for(let i = 0; i < 100; i++) {
+                    this.automobiliai.push( new Automobiliai(rand(0, 10), rand(0, 10)) );
+                }
+            }
+        }
+
+        const salonas = new Salonas();
+
+        console.log(salonas.automobiliai[6]);
+
+        class DeveloperisA {
+            static #privateStaticProperty = 'Privati statine savybe';
+
+            constructor() {
+                console.log(DeveloperisA.#privateStaticProperty);
+            }
+
+            #privateProperty = 'Si savybe yra privati';
+
+            publicMethod() {
+                return 'Sis metodas yra viesas';
+            }
+
+            #privateMethod() {
+                return 'Sis metodas yra privatus';
+            }
+        }
+
+        class DeveloperisB extends DeveloperisA {
+            constructor() {
+                super();
+                console.log(this.publicMethod());
+            }
+        }
+
+        const devB = new DeveloperisB();
+
+        console.log(devB);
+    </script>
+</body>
+
+</html>
