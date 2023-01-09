@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pultelis {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #pultelis img {
+            max-width: 100%;
+        }
+
+        #pultelis .button {
+            position: absolute;
+            border: none;
+            background: none;
+        }
+
+        #pultelis .power-button {
+            top: 71px;
+            left: 626px;
+            width: 38px;
+            height: 26px;
+        }
+
+        #pultelis .channel-up {
+            top: 472px;
+            left: 630px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #pultelis .channel-down {
+            top: 520px;
+            left: 630px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #pultelis .sound-up {
+            top: 473px;
+            left: 505px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #pultelis .sound-down {
+            top: 520px;
+            left: 505px;
+            width: 40px;
+            height: 36px;
+        }
+
+        #tv {
+            width: 360px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #output {
+            position: absolute;
+            width: 150px;
+            height: 60px;
+            top: 45px;
+            left: 38px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tv">
+        <div id="output"></div>
+        <img src="download.jfif" alt="">
+    </div>
+    <div id="pultelis">
+        <button class="button power-button"></button>
+        <button class="button channel-up"></button>
+        <button class="button channel-down"></button>
+        <button class="button sound-up"></button>
+        <button class="button sound-down"></button>
+        <img src="remote-control-tv-isolated-png.webp" alt="">
+    </div>
+    <script>
+        class Televizorius {
+            constructor(gamintojas, kanalas = 1, garsas = 50) {
+                this.gamintojas = gamintojas;
+                this.kanalas = kanalas;
+                this.garsas = garsas;
+                this.statusas = false;
+            }
+
+            setStatusas() {
+                this.statusas = this.statusas ? false : true;
+            }
+
+            setGarsas(lygis) {
+                if(lygis < 0 || lygis > 100) return;
+
+                this.garsas = lygis;
+
+                return this;
+            }
+
+            setKanalas(numeris) {
+                this.kanalas = (numeris > 50 || numeris < 1) ? 1 : numeris;
+
+                return this;
+            }
+
+            setAtstatymas() {
+                this.kanalas = 1;
+                this.garsas = 50;
+
+                return this;
+            }
+
+            dabartiniaiNustatymai() {
+                if(!this.statusas)
+                    return '';
+
+                return `Televizorius ${this.gamintojas} siuo metu rodo ${this.kanalas} kanala. Garso lygis ${this.garsas}.`;
+
+                return this;
+            }
+        }
+
+        // const tv = new Televizorius('Sony');
+        // console.log('Ijungiam televizoriu: ', tv);
+
+        // tv.setGarsas(78);
+        // console.log('Keiciam garsa: ', tv);
+
+        // tv.setKanalas(5);
+        // console.log('Keiciam kanala: ', tv);
+
+        // tv.setKanalas(51);
+        // console.log(tv);
+
+        // tv.setAtstatymas();
+        // console.log('Atstatome i gamyklinius parametrus', tv);
+
+        // console.log(tv.dabartiniaiNustatymai());
+
+        // console.log(tv.setKanalas(8).setGarsas(88).dabartiniaiNustatymai());
+
+        const tvOutput = document.querySelector('#output');
+        const powerButton = document.querySelector('.power-button');
+        const channelUp = document.querySelector('.channel-up');
+        const channelDown = document.querySelector('.channel-down');
+        const soundUp = document.querySelector('.sound-up');
+        const soundDown = document.querySelector('.sound-down');
+
+        const tv = new Televizorius('LG');
+
+        powerButton.addEventListener('click', () => {
+            tv.setStatusas();
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        channelUp.addEventListener('click', () => {
+            tv.setKanalas(tv.kanalas + 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        channelDown.addEventListener('click', () => {
+            tv.setKanalas(tv.kanalas - 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        soundUp.addEventListener('click', () => {
+            tv.setGarsas(tv.garsas + 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+
+        soundDown.addEventListener('click', () => {
+            tv.setGarsas(tv.garsas - 1);
+
+            tvOutput.textContent = tv.dabartiniaiNustatymai();
+        });
+    </script>
+</body>
+</html>
