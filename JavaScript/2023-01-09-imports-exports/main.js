@@ -32,3 +32,5 @@ console.log(name, surname);
 console.log(vardasPavarde());
 
 console.log(funkcijos);
+
+console.log(funkcijos.deduct(10, 2));
