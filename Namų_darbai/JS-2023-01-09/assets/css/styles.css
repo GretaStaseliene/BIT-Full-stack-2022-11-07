@@ -1,0 +1,14 @@
+body {
+    box-sizing: border-box;
+}
+
+#nav-logo {
+    vertical-align: middle;
+    width: 70px;
+    height: 40px;
+}
+
+#main-par {
+    margin: 0 auto;
+    width: 600px;
+}
