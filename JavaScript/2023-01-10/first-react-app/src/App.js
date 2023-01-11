@@ -1,19 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/Header';
+import Headline from './components/headline/Headline';
+import Subheadline from './components/subheadline/Subheadline';
+import Footer from './components/footer/Footer';
+import { useId } from 'react';
 
 // Komponentas
 function App() {
-  // JSX sintakse
+
+  const navLinks = [
+    'Tour', 'Products', 'Features', 'Enterprise', 'Pricing', 'Cart'
+  ];
+
+  function Headlines() {
+    const products = [];
+    const id = useId();
+
+    for(let i = 0; i < 4; i++) {
+      products.push(<Subheadline key={id + i} />);
+    }
+
+    return products;
+  }
+
   return (
-    // Reacte className = class
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Sveiki, tai mano pirmoji react aplikacija.
-        </p>
-      </header>
-    </div>
+    <>
+      <Header nuorodos={navLinks} />
+      <main>
+        <Headline />
+        <Headlines />
+      </main>
+      <Footer />
+    </>
   );
 }
 
