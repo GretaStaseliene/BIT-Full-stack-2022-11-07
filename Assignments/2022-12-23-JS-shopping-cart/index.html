@@ -98,7 +98,7 @@
         }
 
         const deleteItem = (index) => {
-            data.splice(index);
+            data.splice(index, 1);
             if(data.length === 0) {
                 document.querySelector(".msg").textContent = 'Jūsų krepšelis yra tuščias';
                 document.querySelector(".msg").style.display = 'block';
