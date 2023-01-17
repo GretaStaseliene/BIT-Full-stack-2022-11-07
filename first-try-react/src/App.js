@@ -1,12 +1,12 @@
 import './App.css';
-import { useId, useState } from 'react';
+import { useId, useState, useEffect } from 'react';
 
 const Header = ({ nav }) => {
   const id = useId();
 
   return (
     <header>
-      <h1>UAB "Šaunu"</h1>
+      <h1>ToDo List</h1>
       <nav>
         <ul>
           { nav.map((value, index) => <li key={id + index}>{value}</li>) }
@@ -31,24 +31,35 @@ const FormEntry = () => {
   const [edit, setEdit] = useState(false);
   const [editId, setEditId] = useState();
 
+  useEffect(() => {
+    const data = localStorage.getItem('tasks');
+    setTasks(JSON.parse(data));
+  }, []);
+
   const handleForm = (e) => {
     e.preventDefault();
+    let data;
 
     if(edit) {
       tasks[editId].name = currentTask.name;
-      setTasks([...tasks]);
+      data = [...tasks];
+      setTasks(data);
       setEdit(false);
     } else {
-      setTasks([...tasks, currentTask]);
+      data = [...tasks, currentTask]
+      setTasks(data);
     }
+
+    localStorage.setItem('tasks', JSON.stringify(data));
 
     setCurrentTask({name: '', done: false});
   }
 
   const handleDone = (e, index) => {
     tasks[index].done = !tasks[index].done;
-
-    setTasks([...tasks]);
+    const data = [...tasks];
+    setTasks(data);
+    localStorage.setItem('tasks', JSON.stringify(data));
   }
 
   const handleEdit = (index) => {
@@ -60,7 +71,9 @@ const FormEntry = () => {
   const handleDelete = (index) => {
     tasks.splice(index, 1);
     // console.log(tasks);
-    setTasks([...tasks]);
+    const data = [...tasks];
+    setTasks(data);
+    localStorage.setItem('tasks', JSON.stringify(data));
   }
 
   return (
