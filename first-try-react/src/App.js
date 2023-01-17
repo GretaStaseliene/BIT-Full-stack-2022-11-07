@@ -55,7 +55,7 @@ const FormEntry = () => {
     setCurrentTask({name: '', done: false});
   }
 
-  const handleDone = (e, index) => {
+  const handleDone = (index) => {
     tasks[index].done = !tasks[index].done;
     const data = [...tasks];
     setTasks(data);
@@ -70,7 +70,6 @@ const FormEntry = () => {
 
   const handleDelete = (index) => {
     tasks.splice(index, 1);
-    // console.log(tasks);
     const data = [...tasks];
     setTasks(data);
     localStorage.setItem('tasks', JSON.stringify(data));
@@ -88,7 +87,7 @@ const FormEntry = () => {
         key={value.name + index} 
         className={value.done ? 'done' : ''}>
           {value.name}
-        <button className='btn btn-success me-2 ms-2 mt-2' onClick={ (e) => handleDone(e, index) }>Atlikta</button>
+        <button className='btn btn-success me-2 ms-2 mt-2' onClick={ () => handleDone(index) }>Atlikta</button>
         <button className='btn btn-info text-light me-2 mt-2' onClick={ () => handleEdit(index) }>Redaguoti</button>
         <button className='btn btn-danger mt-2' onClick={ () => handleDelete(index) }>Ištrinti</button>
         </li>
