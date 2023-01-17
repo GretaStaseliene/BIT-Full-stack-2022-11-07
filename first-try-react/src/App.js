@@ -22,58 +22,44 @@ const Container = (props) => {
   );
 }
 
-// const FormEntry = () => {
-//   const [value, setValue] = useState('Iveskite teksta i laukeli');
-
-//   const keistiReiksme = (event) => {
-//     setValue(event.target.value);
-//   }
-
-//   return (
-//     <>
-//       <input type="text" onChange={keistiReiksme} />
-//       {/* <input type="text" onChange={(e) => setValue(event.target.value)} /> */}
-//       <div className='rezultatas'>{value}</div>
-//     </>
-//   );
-// }
-
 const FormEntry = () => {
   const [tasks, setTasks] = useState([]);
-  const [currentTask, setCurrentTask] = useState();
+  const [currentTask, setCurrentTask] = useState({
+    name: '', done: false
+  });
+
+  const [edit, setEdit] = useState(false);
+  const [editId, setEditId] = useState();
 
   const handleForm = (e) => {
     e.preventDefault();
 
-    setTasks([...tasks, { name: currentTask, done: false }]);
+    if(edit) {
+      tasks[editId].name = currentTask.name;
+      setTasks([...tasks]);
+      setEdit(false);
+    } else {
+      setTasks([...tasks, currentTask]);
+    }
+
+    setCurrentTask({name: '', done: false});
   }
 
   const handleDone = (e, index) => {
-    tasks[index].done = true;
+    tasks[index].done = !tasks[index].done;
 
     setTasks([...tasks]);
   }
 
-  const handleEdit = (e, index) => {
-    let newTasks = [...tasks];
-    let task = newTasks[index];
-
-    let newTask = prompt(`Update ${task.name}?`);
-    let taskObj = { todo: newTask, complete: false };
-    // newTasks.splice(index, 1, taskObj);
-
-    if(newTask === null || newTask === '') {
-      return;
-    } else {
-      task.todo = newTask;
-    }
-
-    setTasks([...newTasks]);
+  const handleEdit = (index) => {
+    setCurrentTask(tasks[index]);
+    setEdit(true);
+    setEditId(index);
   }
 
-  const handleDelete = (e, index) => {
+  const handleDelete = (index) => {
     tasks.splice(index, 1);
-    console.log(tasks);
+    // console.log(tasks);
     setTasks([...tasks]);
   }
 
@@ -81,16 +67,17 @@ const FormEntry = () => {
     <>
       <h2 className='mb-2'>Task Manager</h2>
       <form className='input-group' onSubmit={handleForm}>
-        <input type='text' className='form-control' onChange={(e) => setCurrentTask(e.target.value)} />
+        <input type='text' className='form-control' onChange={ (e) => setCurrentTask({name: e.target.value, done: false}) } value={currentTask.name} />
         <button className='btn btn-primary'>Issaugoti</button>
       </form>
       {tasks.map((value, index) =>
         <li 
         key={value.name + index} 
-        className={value.done ? 'done' : ''}>{value.name}
+        className={value.done ? 'done' : ''}>
+          {value.name}
         <button className='btn btn-success me-2 ms-2 mt-2' onClick={ (e) => handleDone(e, index) }>Atlikta</button>
-        <button className='btn btn-info text-light me-2 mt-2' onClick={ (e) => handleEdit(e, index) }>Redaguoti</button>
-        <button className='btn btn-danger mt-2' onClick={ (e) => handleDelete(e, index) }>Ištrinti</button>
+        <button className='btn btn-info text-light me-2 mt-2' onClick={ () => handleEdit(index) }>Redaguoti</button>
+        <button className='btn btn-danger mt-2' onClick={ () => handleDelete(index) }>Ištrinti</button>
         </li>
       )}
     </>
@@ -107,7 +94,6 @@ const App = () => {
         <FormEntry />
       </main>
     </Container>
-
   );
 }
 
