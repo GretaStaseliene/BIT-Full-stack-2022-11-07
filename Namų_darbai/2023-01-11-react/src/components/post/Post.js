@@ -15,7 +15,7 @@ const blogas = Blogs.map(res => {
                 <div className="blog-content">
                     <h5>{res.title}</h5>
                     <p className="content">{res.content}...</p>
-                    <p className="continue-reading">Continue reading →</p>
+                    <a href={res.link} className="continue-reading">Continue reading →</a>
                 </div>
             </div>
         </div>
